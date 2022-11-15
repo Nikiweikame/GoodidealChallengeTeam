@@ -1,0 +1,94 @@
+.header {
+  margin: 0 auto;
+  max-width: 1400px;
+  position: relative;
+  overflow-x: clip;
+}
+
+.header__logo-container {
+  position: absolute;
+  width: 488px;
+  left: -104px;
+  top: -155px;
+}
+
+.header__logo-container img {
+  width: 100%;
+  opacity: 15%;
+}
+
+.header__report {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  text-align: center;
+  font-size: 0px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.header__term {
+  display: inline-block;
+  width: 320px;
+  padding: 7px 12px;
+  height: 43px;
+  font-size: 20px;
+  background: #a63f24;
+  vertical-align: bottom;
+}
+
+.header__attendance {
+  display: inline-block;
+  margin-left: 16px;
+  padding: 7px 12px;
+  width: 190px;
+  height: 43px;
+  font-size: 20px;
+  background: #a63f24;
+  vertical-align: bottom;
+}
+
+.header__nav {
+  padding: 72px 140px 63px;
+  color: #a63f24;
+}
+
+.header__title {
+  /* width: 572px; */
+  font-style: normal;
+  letter-spacing: 0.02em;
+  font-size: 0px;
+}
+
+.header__titletext {
+  width: 572px;
+  height: 130px;
+  font-weight: 900;
+  font-size: 90px;
+  line-height: 130px;
+  display: inline-block;
+}
+
+.header__subtitletext {
+  display: block;
+  width: 196px;
+  height: 35px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+h1 {
+  margin: 0;
+  width: 198px;
+  height: 74px;
+  font-weight: 900;
+  font-size: 65px;
+}
+
+.header__effect {
+}
