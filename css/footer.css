@@ -1,3 +1,10 @@
+footer {
+    margin:0;
+}
+
+p {
+    margin:0;
+}
 /* for mobile phone */
 @media (max-width: 992px) {
 .footer__slogan {
@@ -19,8 +26,15 @@
 .footer__slogan {
     background-color: #A63F24;
     width: 100%;
+    text-align: center;
 }
+
+.footer__slogan div {
+    color:#ffffff
+}
+
 
 .footer__story {
     background-color: #ffffff;
+    padding: 20px;
 }
