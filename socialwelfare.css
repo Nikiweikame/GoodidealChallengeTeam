@@ -41,28 +41,24 @@ h1 {
 }
 
 /* 待處理 */
-span::after {
-    content: "";
+span::before, span::after {
+    content: ' ';
     display: block;
     height: 1px;
     width: 100%;
-    transform: rotate(-35deg);
+    transform: rotate(-45deg);
     top: calc(50% - .5Px);
     left:0;
     color:white;
 }
 
 span::before {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    transform: rotate(-35deg);
-    top: calc(50% - .5Px);
-    left:0;
-    color:white;
+
 }
 
+span::after {
+    
+}
 
 .menuclose span {
     font-size: 20px;
