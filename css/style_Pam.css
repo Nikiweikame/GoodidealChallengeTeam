@@ -2,67 +2,90 @@
   outline: 1px green solid;
 }
 body {
-  min-width: 992px;
+  /* min-width: 992px; */
 }
 
 header {
-  background: #a63f24;
+  padding: 20px;
   color: #ffffff;
   text-align-last: justify;
+  background: #a63f24;
 }
 
 h1 {
   display: inline-block;
-  padding: 20px 0;
   margin: 0;
   vertical-align: middle;
-  padding: 20px;
 }
-.btn-close {
+
+.tittle .btn-close {
   display: inline-block;
+  width: calc(1.375rem + 1.5vw);
+  height: calc(1.375rem + 1.5vw);
+  border: none #a63f24;
   vertical-align: middle;
-  /* color: #ffffff; */
+  background-size: cover;
+  opacity: 1;
 }
 
 main {
   font-size: 0;
 }
+
 .mobile {
   display: none;
 }
 
+.dropdown .btn-secondary {
+  width: 100%;
+  font-size: calc(1.3rem + 0.6vw);
+  text-align-last: justify;
+  background-color: #a63f24;
+}
+
+.container {
+  display: inline-block;
+  width: fit-content;
+}
+
+.dropdown .dropdown-menu {
+  width: 100%;
+  font-size: calc(1.3rem + 0.6vw);
+  background-color: #ddd;
+}
+
 .list {
   display: inline-block;
-  background: #a63f24;
   width: 30%;
-  vertical-align: top;
-  height: 100vh;
+  height: 100%;
   font-size: 26px;
+  background: #a63f24;
+  vertical-align: top;
 }
 
 .bullet {
   display: block;
+  margin: 0;
+  padding: 20px;
+  border: 1px white solid;
   color: #ffffff;
   text-decoration: none;
-  border: 1px white solid;
-  padding: 20px;
-  margin: 0;
   text-align-last: justify;
 }
 
 .bullet div {
   display: inline-block;
 }
+
 .aside {
-  background: #a63f24;
   display: inline-block;
   width: 70%;
-  height: 100vh;
+  background: #a63f24;
 }
 
 .article {
-  background: white;
   padding: 50px;
+  background: white;
 }
 
 .article + .article {
@@ -70,16 +93,15 @@ main {
 }
 
 .article h3 {
-  /* padding: 10px 0; */
   margin: 0;
 }
 
 .article h4 {
+  margin: 30px 0 0 0;
   font-size: 12px;
   color: grey;
-  /* padding: 5px 0; */
-  margin: 30px 0 0 0;
 }
+
 .article h5 {
   margin: 30px 0 0 0;
   font-size: 18px;
@@ -87,13 +109,13 @@ main {
 }
 
 .article p {
-  font-size: 18px;
   margin: 10px 0 0 0;
+  font-size: 18px;
 }
 
 .actived {
-  background: white;
   color: #a63f24;
+  background: white;
 }
 
 @media screen and (max-width: 992px) {
@@ -104,7 +126,10 @@ main {
     display: block;
   }
   .aside {
-    margin: 0 auto;
     width: 100%;
+    margin: 0 auto;
+  }
+  article {
+    padding: 20px;
   }
 }
