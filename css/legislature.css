@@ -83,6 +83,31 @@ main {
   background: #a63f24;
 }
 
+.personal_bill-appear .personal_bill{
+  display: block;
+}
+
+.cowork_bill-appear .cowork_bill{
+  display: block;
+}
+
+.oral_interpellation-appear .oral_interpellation{
+  display: block;
+}
+
+.others-appear .others{
+  display: block;
+}
+
+.personal_bill,
+.cowork_bill,
+.oral_interpellation,
+.others {
+  overflow-y: auto;
+  height: calc(100vh - 50px);
+  display: none;
+}
+
 .article {
   padding: 50px;
   background: white;
