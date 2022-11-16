@@ -109,18 +109,61 @@ h1 {
 }
 .header__legislature {
   grid-area: a;
-  /* height: 436px; */
+  height: 436px;
+  background-image: url("https://s3-alpha-sig.figma.com/img/8039/1b14/832d56311805b57e4b3bcfe764598332?Expires=1669593600&Signature=XXYHAxi1chuCnLKURo8OTvtZqAjZpiC2jot2vw9XzO0CDMnjGIUsa7L18-~hKkRQiXeX9q9uEPNE6O7qtGm4xO3Am3o-RJ8erfdElil8J6ZT7RpFRyCaj-HrMm8SLUYcB1O8rrjYObs14KhDpOFw4LV0ecmufzRQvvDJqou9la9HNkSpda06NTZ8gQYB0JnddqbPfPLXn~dxY3nuyGQ4BqgPeQWELHHMRSlmwv9Vxfggwksyvo9oCXA0bXd5O7rteTahF-ZPORN3jphIuBd3Fxi6VlJw2KqGz8UJxsXjJRjjw-9eqPFM4funXTqO-7iXUmCm2ndOtRC8qf4y6T1zjA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-color: #f6f6f6;
+  background-size: 510px 280px;
+  background-repeat: no-repeat;
+  background-position: 290px 176px;
 }
+.header__container {
+  margin: 24px auto 0px 30.2px;
+}
+
+.header__box {
+  display: inline-block;
+  width: fit-content;
+  z-index: 2;
+}
+.header__box + .header__box {
+  margin-left: 92px;
+}
+.header__number {
+  font-size: 80px;
+  color: #a63f24;
+  line-height: 80px;
+  font-weight: 600;
+}
+.header__sub-tittle {
+  font-size: 24px;
+  color: #a63f24;
+}
+
 .header__petition {
   grid-area: b;
-  /* height: 233.9px; */
+  height: 233.9px;
 }
 .header__press-conference {
   grid-area: c;
-  /* height: 230px; */
+  height: 230px;
 }
 .header__survey {
+  position: relative;
+  height: 480px;
   grid-area: d;
+}
+.header__survey .header__background-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  background-image: url("https://s3-alpha-sig.figma.com/img/6f68/3486/c563e10f42f7b86a839b012a5cd53707?Expires=1669593600&Signature=e1XlQz9AXCap6cyPLXZA1jJD8z7fiFmSs9f0FKaNs0wmIf4g3809uDm~rv1nPYTDOLv9exYb~AQosyXmhLSThNabqHZpTwuDQkgUehrGdNFiPR5jnaaeCX-IrIuurDl4JRE0xO2DpY8uA1YTS1dDlHX4X~Pq4LuiUN7ewiP3WfRkRD1xb5QpimFZ6F5mrti~SUmKftuaaQIrdk~oYs4SJVVFIsRxG198oUj50h0g9coyrQyK-j~LyCBVKdOgMTCDVPOG4g-uGPCas7FKf648qfv4MVFpeXZACnQ-BF4ZttAfqxEgKDVKtzLYR4APPu84NVvcasCFPcZGIbQPUR6Euw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-size: 254px 468.38px;
+  background-position: 124px 56px;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 .header__social-welfare-container {
@@ -131,6 +174,7 @@ h1 {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 269px;
 }
 
 .header__full-body-img {
