@@ -1,0 +1,26 @@
+/* for mobile phone */
+@media (max-width: 992px) {
+.footer__slogan {
+    flex-direction: column;
+}
+.img {
+    display: none;
+}
+}
+
+/* for PC */
+@media screen and (min-width: 992px){
+.footer__slogan {
+    display: flex;
+}
+}
+
+/* common */
+.footer__slogan {
+    background-color: #A63F24;
+    width: 100%;
+}
+
+.footer__story {
+    background-color: #ffffff;
+}
