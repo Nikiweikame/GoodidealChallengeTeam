@@ -1,40 +1,148 @@
-footer {
+* {
+    font-family: noto sans TC;
+}
+body {
     margin:0;
 }
 
 p {
     margin:0;
 }
+ul {
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    text-decoration: none;
+}
+
 /* for mobile phone */
 @media (max-width: 992px) {
-.footer__slogan {
-    flex-direction: column;
+.slogan__container {
+    display: block;
 }
-.img {
+img {
     display: none;
 }
+.footer__story.footer__story {
+    padding-left: 30px;
+}
+.footer__slogan-text {
+    font-size: 50px;
+}
+
+.footer__slogan-number {
+    font-size: 94px;
+}
+
+.footer__slogan-category {
+    font-size: 25px;
+}
+.footer__story-text {
+    text-align: center;
+}
+.footer__story-text article, .footer__story-text p {
+    text-align: left;
+}
+
 }
 
 /* for PC */
 @media screen and (min-width: 992px){
-.footer__slogan {
-    display: flex;
+.slogan__container {
+    display: block;
+    max-width: 700px;
+    margin:0 auto; 
 }
+.slogan__container p {
+    display: inline-block;    
+}
+.footer__slogan-local {
+    max-width: 240px;
+    display: inline-block;
+}
+.footer__slogan-text {
+    font-size: 50px;
+}
+
+.footer__slogan-number {
+    font-size: 100px;
+}
+.footer__slogan-category  {
+    font-size: 24px;
+}
+.footer__slogan-text + .footer__slogan-text {
+    margin-left: 20px;
+}
+
+.footer__slogan-local + .footer__slogan-local {
+    margin-left: 30px;
+}
+
+.footer__story-text {
+    display: inline-block;
+    max-width: 1000px;
+    margin-left: 30px;
+    vertical-align: top;
+}
+
+.footer__story-picture img {
+    width: 100%;
+    display: block;
+}
+
 }
 
 /* common */
 .footer__slogan {
     background-color: #A63F24;
     width: 100%;
-    text-align: center;
 }
 
-.footer__slogan div {
+.slogan__container {
+    background-color: #A63F24;
+    width: 100%;
+    text-align: center; 
+    padding: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+
+.slogan__container p {
     color:#ffffff
 }
 
 
 .footer__story {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 30px;
+    padding-left: 450px;
 }
+
+.footer__story-picture {
+    width: 400px;
+    height: 730px;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 18px;
+}
+.footer__story-snslinks {
+    display: block;
+}
+
+.footer__story-joinlinks {
+    display: inline-block;
+}
+
+.footer__story-share{
+    display: inline-block;
+}
+
+.footer__story-joinlinks p,.footer__story-share p, i {
+    color: #A63F24;
+}
+
