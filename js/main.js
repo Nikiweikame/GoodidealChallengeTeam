@@ -1,3 +1,18 @@
+// 數字變化js 
+
+function animateIt(element,number) {
+  var tick = 0;
+  var timer = setInterval(function(){
+    if (tick <= number) {
+     AA.innerText = tick ;
+      tick++;
+    }
+    else {
+      clearInterval(timer); 
+      }
+  }, 10);
+}
+
 const bodyElement = document.querySelector("body");
 console.log(bodyElement);
 function bodyAddLegislature() {
@@ -50,35 +65,12 @@ async function writeLegislaturePersonalBill() {
       .catch((error) => console.log("error", error));
     return output;
   }
-
   const legislatureJSON = await GetLegislaturePersonalBillJSON();
   for (let i of legislatureJSON) {
-    let title = i.fields["提案名稱"];
-    let data = i.fields["提案日期"];
-    let content = i.fields["內容關鍵字"];
-    let h3 = document.createElement("h3");
-    let h3Text = document.createTextNode(title);
-    h3.appendChild(h3Text);
-    let h4 = document.createElement("h4");
-    let h4Text = document.createTextNode("提案日期：" + data);
-    h4.appendChild(h4Text);
-    let h5 = document.createElement("h5");
-    let h5Text = document.createTextNode("內容關鍵字：");
-    h5.appendChild(h5Text);
-    let p = document.createElement("p");
-    let pText = document.createTextNode(content);
-    p.appendChild(pText);
-
-    let newarticle = document.createElement("article");
-    newarticle.className = "article";
-    newarticle.appendChild(h3);
-    newarticle.appendChild(h4);
-    newarticle.appendChild(h5);
-    newarticle.appendChild(p);
-
+    const text =`<article class="article"><h3>${i.fields["提案名稱"]}</h3><h4>提案日期：${i.fields["提案日期"]}</h4><h5>內容關鍵字：</h5><p>${i.fields["內容關鍵字"]}</p></article>`
     let target = document.querySelectorAll("div.personal_bill")[0];
-    target.appendChild(newarticle);
-    // console.log(i.fields["內容關鍵字"],i.fields["提案名稱"],i.fields["提案日期"])
+
+    target.innerHTML+=text;
   }
 }
 
@@ -139,3 +131,22 @@ legislatureitems[3].addEventListener("click",()=>legislatureMainPage.className =
 // cowork_bill
 // oral_interpellation
 // others
+
+// 上任計時器
+
+AAAA =  new Date(2020,2,1)
+function getDistanceSpecifiedTime(dateTime) {
+  // 指定日期和时间
+  var EndTime = new Date(dateTime);
+  // 当前系统时间
+  var NowTime = new Date();
+  var t = NowTime.getTime()-EndTime.getTime() ;
+  // var y = Math.floor(t / 1000 / 60 / 60 / 24 / 365)
+  var d = Math.floor(t / 1000 / 60 / 60 / 24 );
+  var h = Math.floor(t / 1000 / 60 / 60 % 24);
+  var m = Math.floor(t / 1000 / 60 % 60);
+  var s = Math.floor(t / 1000 % 60);
+  var html =  d + " 天" + h + " 时" + m + " 分" + s + " 秒";
+  console.log(html,Date());
+}
+getDistanceSpecifiedTime(AAAA)
