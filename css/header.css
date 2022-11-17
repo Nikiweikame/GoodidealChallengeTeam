@@ -100,7 +100,7 @@
 .header__effect-business {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 436px 233.9px 230px;
   grid-template-areas:
     "a a a e"
     "b b d d"
@@ -108,21 +108,87 @@
   gap: 20px;
 }
 .header__legislature {
+  position: relative;
   grid-area: a;
-  /* height: 436px; */
+  height: 436px;
 }
-.header__petition {
-  grid-area: b;
-  /* height: 233.9px; */
+.header__container {
+  margin: 24px auto 0px 30.2px;
 }
-.header__press-conference {
-  grid-area: c;
-  /* height: 230px; */
+.header__background-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
-.header__survey {
-  grid-area: d;
+.header__box {
+  display: inline-block;
+  width: fit-content;
+}
+.header__box-z {
+  position: absolute;
+  z-index: 2;
 }
 
+.header__box + .header__box {
+  margin-left: 92px;
+}
+.header__number {
+  font-size: 80px;
+  color: #a63f24;
+  line-height: 80px;
+  font-weight: 600;
+}
+.header__sub-tittle {
+  font-size: 24px;
+  color: #a63f24;
+}
+
+.header__petition {
+  position: relative;
+  grid-area: b;
+  height: 233.9px;
+}
+.header__press-conference {
+  position: relative;
+  grid-area: c;
+  height: 230px;
+}
+.header__survey {
+  position: relative;
+  height: 480px;
+  grid-area: d;
+}
+.header__background-legislature {
+  background-image: url("https://s3-alpha-sig.figma.com/img/8039/1b14/832d56311805b57e4b3bcfe764598332?Expires=1669593600&Signature=XXYHAxi1chuCnLKURo8OTvtZqAjZpiC2jot2vw9XzO0CDMnjGIUsa7L18-~hKkRQiXeX9q9uEPNE6O7qtGm4xO3Am3o-RJ8erfdElil8J6ZT7RpFRyCaj-HrMm8SLUYcB1O8rrjYObs14KhDpOFw4LV0ecmufzRQvvDJqou9la9HNkSpda06NTZ8gQYB0JnddqbPfPLXn~dxY3nuyGQ4BqgPeQWELHHMRSlmwv9Vxfggwksyvo9oCXA0bXd5O7rteTahF-ZPORN3jphIuBd3Fxi6VlJw2KqGz8UJxsXjJRjjw-9eqPFM4funXTqO-7iXUmCm2ndOtRC8qf4y6T1zjA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-size: 510px 280px;
+  background-position: 290px 176px;
+}
+.header__background-petition {
+  background-image: url("https://3qi.tw/img/petition-bg.39af405a.png");
+  background-position: 178.86px 107.76px;
+}
+
+.header__background-survey {
+  background-image: url("https://s3-alpha-sig.figma.com/img/6f68/3486/c563e10f42f7b86a839b012a5cd53707?Expires=1669593600&Signature=e1XlQz9AXCap6cyPLXZA1jJD8z7fiFmSs9f0FKaNs0wmIf4g3809uDm~rv1nPYTDOLv9exYb~AQosyXmhLSThNabqHZpTwuDQkgUehrGdNFiPR5jnaaeCX-IrIuurDl4JRE0xO2DpY8uA1YTS1dDlHX4X~Pq4LuiUN7ewiP3WfRkRD1xb5QpimFZ6F5mrti~SUmKftuaaQIrdk~oYs4SJVVFIsRxG198oUj50h0g9coyrQyK-j~LyCBVKdOgMTCDVPOG4g-uGPCas7FKf648qfv4MVFpeXZACnQ-BF4ZttAfqxEgKDVKtzLYR4APPu84NVvcasCFPcZGIbQPUR6Euw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-size: 254px 468.38px;
+  background-position: 124px 56px;
+}
+
+.header__background-press {
+  background-image: url("https://s3-alpha-sig.figma.com/img/eff9/5e29/6de30a8145ec8c9b60567146a28dd0e1?Expires=1669593600&Signature=EO0v6-35D1nTUHtHVKgp42~BF58Nwk1DYpBiBf5dGnjrDaZdW2lzHWmJNZ0230QLpsugckoLiT4uXKi4dizTzN1Z3faBtT4QP97NdC6p4Ccquq6EbRSuivFUSIbLzufODRoEDBXXpnxbnh0EcJqrFQtW9qD7TzYVRBvB9BkAZlofp5aSCfk0cgMydhqx01T~BPLZQH0mGf~yo5Ol3l6ilrV~FxNk7xtw3frLKH388UmIFoInb0GaaYMXT2LrO-u0XbJu~tqbZLYBiV4FJp3t3muiCTECk2M5eqi5Qyv9Jw-6JKHg9ZSg2X5XlusLYU~VqKj1T09RVRv7dlnBgNPYlw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-size: 672px 395.95px;
+  background-position: -148px 32.03px;
+}
+.header__background-social {
+  background-image: url("https://s3-alpha-sig.figma.com/img/b7d4/d725/f092bfa80400f3b38265a287b73d7d83?Expires=1669593600&Signature=TxIbX4JCm6WfsAFeziizhdDKnEd7YBIrVjMLmaot6h5XEwxUJUCYZAUKbz9KbLjtG6vL1MORg869mbxz1UJrWukxdocE96MJYvnH-R4b0uUapPe87gkxppW9b4VygAlrlavK2M-wylRFNzowOZRzsViJygXHEGkX2X~D3oThyITzEycMi39cp57XcbZsMdqdpNpGVw~I3Ad3qBZtpcBkfDns4dZMZ7zSECUj4FZQTzCqzX5UCWMWiD-Nf2Gz7TlTNDZJ5XkRnD9cvlHVvP6PFZGbh3QIYLDfDEVV~0JOdBUgRFi3thpZj~KVV6jdUzN2Bf24JODZuuNAGoTRXczUGw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-size: 318px 267px;
+  background-position: 113px 25px;
+}
 .header__social-welfare-container {
   position: relative;
 }
@@ -131,6 +197,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 269px;
 }
 
 .header__full-body-img {
