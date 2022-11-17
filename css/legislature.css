@@ -1,12 +1,13 @@
 * {
   outline: 1px green solid;
 }
+
 body {
-  /* min-width: 992px; */
+  background-color: #a63f24;
 }
 
 .legislature__tittle {
-  padding: 20px;
+  padding: 17px 36px 17px 30px;
   color: #ffffff;
   text-align-last: justify;
   background: #a63f24;
@@ -15,14 +16,15 @@ body {
 .legislature__tittle h2 {
   display: inline-block;
   margin: 0;
+  font-size: 36px;
   vertical-align: middle;
 }
 
 .legislature__tittle .btn-close {
   display: inline-block;
-  width: calc(1.375rem + 1.5vw);
-  height: calc(1.375rem + 1.5vw);
-  border: none #a63f24;
+  width: 36px;
+  height: 36px;
+  border: none;
   vertical-align: middle;
   background-size: cover;
   opacity: 1;
@@ -37,8 +39,9 @@ body {
 }
 
 .legislature__mobile .btn-secondary {
+  padding: 14.5px 16px;
   width: 100%;
-  font-size: calc(1.3rem + 0.6vw);
+  font-size: 17px;
   text-align-last: justify;
   background-color: #a63f24;
 }
@@ -50,15 +53,14 @@ body {
 
 .legislature__mobile .dropdown-menu {
   width: 100%;
-  font-size: calc(1.3rem + 0.6vw);
+  font-size: 17px;
   background-color: #ddd;
 }
 
 .legislature__list {
   display: inline-block;
-  width: 30%;
-  height: 100%;
-  font-size: 26px;
+  width: 20%;
+  /* height: 100%; */
   background: #a63f24;
   vertical-align: top;
 }
@@ -66,25 +68,35 @@ body {
 .legislature__bullet {
   display: block;
   margin: 0;
-  padding: 20px;
+  padding: 22.5px 30px;
   border: 1px white solid;
   color: #ffffff;
   text-decoration: none;
   text-align-last: justify;
 }
 
+.legislature__bullet:hover {
+  color: #fff;
+}
+
 .legislature__bullet div {
   display: inline-block;
 }
 
+.legislature__sub-tittle {
+  font-size: 24px;
+}
+.legislature__number {
+  font-size: 30px;
+}
 .legislature__aside {
   display: inline-block;
-  width: 70%;
+  width: 80%;
   background: #a63f24;
 }
 
 .legislature__article {
-  padding: 50px;
+  padding: 50px 54px;
   background: white;
 }
 
@@ -94,28 +106,65 @@ body {
 
 .legislature__article h4 {
   margin: 0;
+  font-size: 17px;
 }
 
-.legislature__article h5 {
-  margin: 30px 0 0 0;
-  font-size: 12px;
+.legislature__article h5,
+h6 {
+  font-size: 13px;
   color: grey;
 }
 
 .legislature__article h6 {
-  margin: 30px 0 0 0;
-  font-size: 18px;
-  font-weight: bolder;
+  margin: 8px 0 0 0;
+}
+.legislature__article p {
+  margin: 8px 0 0 0;
+  font-size: 17px;
+}
+.legislature__filter {
+  background-color: #fff;
+  padding: 17px 30px;
 }
 
-.legislature__article p {
-  margin: 10px 0 0 0;
-  font-size: 18px;
+.legislature__filter .dropdown-toggle {
+  display: inline-block;
+  color: #a63f24;
+}
+
+.legislature__filter .btn-secondary {
+  padding: 9.5px 8px;
+  border: 1px #a63f24 solid;
+  border-radius: 0;
+  color: #000;
+  background-color: #fff;
+}
+
+.legislature__filter .legislature__container + .legislature__container {
+  margin-left: 38px;
+}
+
+.legislature__filter .dropdown-menu {
+  background-color: #ddd;
+}
+
+.legislature__box {
+  display: inline-block;
+  width: fit-content;
+  vertical-align: top;
+}
+
+.legislature__box + .legislature__box {
+  margin-left: 16px;
 }
 
 .legislature__actived {
   color: #a63f24;
   background: white;
+}
+
+.legislature__actived:hover {
+  color: #a63f24;
 }
 
 @media screen and (max-width: 992px) {
@@ -131,5 +180,15 @@ body {
   }
   .legislature__article {
     padding: 20px;
+  }
+  .legislature__tittle {
+    padding: 24px 25px 24px 16px;
+  }
+  .legislature__tittle h2 {
+    font-size: 24px;
+  }
+  .legislature__tittle .btn-close {
+    width: 30px;
+    height: 30px;
   }
 }
