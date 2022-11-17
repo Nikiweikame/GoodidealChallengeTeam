@@ -1,0 +1,111 @@
+
+body {
+    margin: 0;
+}
+
+
+@media screen and (max-width: 992px){
+/* for mobile phone */
+.pc {
+    display: none;
+}
+
+}
+
+.title {
+    width: 100%;
+    background-color: 
+    #A63F24;
+    margin:0;
+    color:white;
+    padding: 10px;
+    border-bottom:solid #ffffff 1px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    /* margin:0; */
+
+}
+
+.menuclose {
+    display: flex;
+    background-color:#A63F24;
+    color:white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border:none;
+}
+
+/* 待處理 */
+span::before, span::after {
+    content: ' ';
+    display: block;
+    height: 1px;
+    width: 100%;
+    transform: rotate(-45deg);
+    top: calc(50% - .5Px);
+    left:0;
+    color:white;
+}
+
+span::before {
+
+}
+
+span::after {
+    
+}
+
+.menuclose span {
+    font-size: 20px;
+}
+/* 待處理 */
+
+table {
+    border-collapse:collapse;
+    text-align: center;
+    width: 100%;
+}
+
+thead {
+    width: 100%;
+    background-color: #A63F24;
+    margin:0;
+    color: #ffffff;
+    font-size:10px ;
+    text-align: left;
+    padding: 10px;
+}
+.event th {
+    padding: 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.event td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+@media screen and (min-width: 992px)
+ {
+
+  /* for PC: */
+h1 {
+    width: 100%;
+    background: #A63F24;
+    font-size: medium;
+}
+
+.sp {
+    display: none;
+}
+
+table {
+    border-left: #A63F24 solid 15px;
+}
+}
