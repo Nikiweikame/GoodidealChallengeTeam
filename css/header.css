@@ -131,7 +131,7 @@
 }
 .header__box-z {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
 }
 
 .header__box + .header__box {
