@@ -104,7 +104,7 @@ main {
 .oral_interpellation,
 .others {
   overflow-y: auto;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 88px);
   display: none;
 }
 
