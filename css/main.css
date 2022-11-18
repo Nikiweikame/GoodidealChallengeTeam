@@ -1,27 +1,43 @@
 .legislature {
-    display: none;
-    position: fixed;
-    top:0;
-    left: 0;
-    right:0;
-    background-color: #a63f24;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #a63f24;
 }
 
 .legislature--appear .legislature {
-    display: block;
-    z-index: 1;
+  display: block;
+  z-index: 1;
+}
+
+.legislature__personal_bill,
+.legislature__cowork_bill,
+.legislature__written_interpellation,
+.legislature__oral_interpellation,
+.legislature__others {
+  display: none;
+}
+
+.personal_bill-appear .legislature__personal_bill,
+.cowork_bill-appear .legislature__cowork_bill,
+.written_interpellation-appear .legislature__written_interpellation,
+.oral_interpellation-appear .legislature__oral_interpellation,
+.others-appear .legislature__others {
+  display: block;
 }
 
 .social-welfare {
-    display: none;
-    position: fixed;
-    top:0;
-    left: 0;
-    right:0;
-    background-color: #FFF;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
 }
 
 .social-welfare--appear .social-welfare {
-    display: block;
-    z-index: 1;
+  display: block;
+  z-index: 1;
 }

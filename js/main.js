@@ -9,7 +9,7 @@ function animateIt(element, number) {
     } else {
       clearInterval(timer);
     }
-  }, 10);
+  }, 2000/number);
 }
 // 以後用datejs
 // 區塊出現
@@ -80,8 +80,10 @@ async function writeLegislaturePersonalBill() {
       .then((result) => {
         // console.log(result);
         output = result.records;
+        next = result.offset;
       });
     // .catch((error) => console.log("error", error));
+
     return output;
   }
   const legislatureJSON = await GetLegislaturePersonalBillJSON();
@@ -127,13 +129,47 @@ async function writeSocialWelfare() {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         output = result.records;
+        next = result.offset;
       })
       .catch((error) => console.log("error", error));
+    async function getNext() {
+      if (next !== undefined) {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer keyMauE9U1NpxdgKy");
+        myHeaders.append("Cookie", "brw=brwJ0SI0UUvmgWbi6");
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+        var outputNext;
+        await fetch(
+          "https://api.airtable.com/v0/appoA2cEynkrD40GL/%E5%9C%B0%E6%96%B9%E5%85%AC%E7%9B%8A%E6%B4%BB%E5%8B%95?view=Grid%20view&offset=" +
+            next,
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            // console.log(result);
+            outputNext = result.records;
+            next = result.offset;
+          });
+        output = output.concat(outputNext);
+        await getNext()
+      }
+    }
+    await getNext();
     return output;
   }
   const socialWelfareJSON = await GetSocialWelfareJSON();
+  number = socialWelfareJSON.length;
+  headerNumber = document.querySelector(".header__social-welfare .header__number")
+  animateIt(headerNumber,number)
+  // console.log(headerNumber)
+  // console.log(number)
   for (let i of socialWelfareJSON) {
     const text = ` <tr><td class="social-welfare__common">${i.fields["性質"]}</td><td class="social-welfare__sp">${i.fields["活動名稱"]}<br/><br/>${i.fields["活動時間"]}</td><td class="social-welfare__pc">${i.fields["活動時間"]}</td><td class="social-welfare__pc">${i.fields["活動區域"]}</td><td class="social-welfare__pc">${i.fields["活動內容"]}</td></tr>`;
     let target = document.querySelector(".social-welfare__event tbody");
@@ -149,15 +185,15 @@ document.addEventListener("DOMContentLoaded", writeSocialWelfare, false);
 function changeActivity() {
   function disappearActivty() {
     for (let i of AA) {
-      i.classList.remove("actived");
+      i.classList.remove("legislature__actived");
     }
   }
-  const AA = document.querySelectorAll("a.bullet");
+  const AA = document.querySelectorAll("a.legislature__bullet");
   disappearActivty();
-  this.classList.add("actived");
+  this.classList.add("legislature__actived");
 }
 
-let legislatureitems = document.querySelectorAll("a.bullet");
+let legislatureitems = document.querySelectorAll("a.legislature__bullet");
 let buttonActivity = new ButtonActivity();
 
 for (let i of legislatureitems) {
@@ -168,33 +204,37 @@ function ButtonActivity() {
   this.click = function () {
     function disappearActivty() {
       for (let i of AA) {
-        i.classList.remove("actived");
+        i.classList.remove("legislature__actived");
       }
     }
-    const AA = document.querySelectorAll("a.bullet");
+    const AA = document.querySelectorAll("a.legislature__bullet");
     disappearActivty();
-    this.classList.add("actived");
+    this.classList.add("legislature__actived");
   };
 }
 
 // legislature-button-mainpage
 
-const legislatureMainPage = document.querySelector("section.aside");
+const legislatureMainPage = document.querySelector("section.legislature__aside");
 legislatureitems[0].addEventListener(
   "click",
-  () => (legislatureMainPage.className = "aside personal_bill-appear")
+  () => (legislatureMainPage.className = "legislature__aside personal_bill-appear")
 );
 legislatureitems[1].addEventListener(
   "click",
-  () => (legislatureMainPage.className = "aside cowork_bill-appear")
+  () => (legislatureMainPage.className = "legislature__aside cowork_bill-appear")
 );
 legislatureitems[2].addEventListener(
   "click",
-  () => (legislatureMainPage.className = "aside oral_interpellation-appear")
+  () => (legislatureMainPage.className = "legislature__aside written_interpellation-appear")
 );
 legislatureitems[3].addEventListener(
   "click",
-  () => (legislatureMainPage.className = "aside others-appear")
+  () => (legislatureMainPage.className = "legislature__aside oral_interpellation-appear")
+);
+legislatureitems[4].addEventListener(
+  "click",
+  () => (legislatureMainPage.className = "legislature__aside others-appear")
 );
 
 // personal_bill

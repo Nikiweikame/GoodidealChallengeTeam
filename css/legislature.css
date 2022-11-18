@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #a63f24;
+  /* background-color: #a63f24; */
 }
 
 .legislature__tittle {
@@ -95,8 +95,8 @@ body {
   background: #a63f24;
 }
 
-.article {
-  padding: 50px;
+.legislature__article {
+  padding: 50px 54px;
   background: white;
 }
 
