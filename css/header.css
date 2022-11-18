@@ -118,20 +118,16 @@ h1 {
 .header__background-container {
   width: 100%;
   height: 100%;
-  background-color: #f6f6f6;
+  background-color: #f7f7f7;
   background-repeat: no-repeat;
   opacity: 0.3;
   position: absolute;
-  top: 0px;
-  left: 0px;
 }
+
 .header__box {
   display: inline-block;
   width: fit-content;
-}
-.header__box-z {
-  position: absolute;
-  z-index: 2;
+  position: relative;
 }
 
 .header__box + .header__box {
@@ -201,11 +197,18 @@ h1 {
 }
 
 .header__full-body-img {
+  width: 766.16px;
+  height: 1095.92px;
   position: absolute;
-  bottom: 100%;
+  /* bottom: 100%; */
+  bottom: 121.08px;
+  left: -259.88px;
+  background-image: url("./images/people-01.84b9d570.png");
+  background-size: 766.16px 1095.92px;
 }
 
 .header__full-body-img img {
   width: 100%;
+  height: 100%;
   transform: rotate(4.81deg);
 }
