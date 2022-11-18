@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   background-color: #a63f24;
+  height: 100%;
 }
 
 .legislature--appear .legislature {
@@ -18,6 +19,8 @@
 .legislature__oral_interpellation,
 .legislature__others {
   display: none;
+  height: calc(100vh - 78px);
+  overflow-y: auto;
 }
 
 .personal_bill-appear .legislature__personal_bill,
