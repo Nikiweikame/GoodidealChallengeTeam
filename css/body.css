@@ -1,8 +1,9 @@
 body {
   position: relative;
   font-family: "Noto Sans TC";
+  margin: 0;
 }
 
 * {
-  /* outline: red solid 1px;  */
+  outline: red solid 1px;
 }

@@ -1,15 +1,27 @@
 .legislature {
     display: none;
-    position: absolute;
+    position: fixed;
     top:0;
     left: 0;
     right:0;
     background-color: #a63f24;
 }
 
-.legislatureappear .legislature {
+.legislature--appear .legislature {
     display: block;
-    position: absolute;
+    z-index: 1;
+}
+
+.social-welfare {
+    display: none;
+    position: fixed;
     top:0;
+    left: 0;
+    right:0;
+    background-color: #FFF;
+}
+
+.social-welfare--appear .social-welfare {
+    display: block;
     z-index: 1;
 }
