@@ -44,27 +44,27 @@
           <div class="header__legislature">
             <div class="header__container">
               <div class="header__box">
-                <div class="header__number personalbillnumber">載入中</div>
+                <div class="header__number personalbillnumber">...</div>
                 <div class="header__sub-tittle">法律主提案</div>
               </div>
               <div class="header__box">
-                <div class="header__number coworkbillnumber">載入中</div>
+                <div class="header__number coworkbillnumber">...</div>
                 <div class="header__sub-tittle">法律共同提案</div>
               </div>
             </div>
             <div class="header__container">
               <div class="header__box">
-                <div class="header__number writtenInterpellationnumber">載入中</div>
+                <div class="header__number writtenInterpellationnumber">...</div>
                 <div class="header__sub-tittle">書面質詢</div>
               </div>
               <div class="header__box">
-                <div class="header__number oralinterpellationnumber">載入中</div>
+                <div class="header__number oralinterpellationnumber">...</div>
                 <div class="header__sub-tittle">口頭質詢</div>
               </div>
             </div>
             <div class="header__container">
               <div class="header__box">
-                <div class="header__number othersnumber">載入中</div>
+                <div class="header__number othersnumber">...</div>
                 <div class="header__sub-tittle">國會其他發言</div>
               </div>
               <div class="header__box">
@@ -107,7 +107,7 @@
                 alt="陳柏惟自信的全身照" />
             </div>
             <div class="header__box header__box-z">
-              <div class="header__number">載入中</div>
+              <div class="header__number">...</div>
               <div class="header__sub-tittle">社會公益</div>
             </div>
             <div class="header__background-container header__background-social"></div>
@@ -143,19 +143,19 @@
         <h3 class="legislature__list">
           <a class="legislature__bullet legislature__actived" href="##">
             <div class="legislature__sub-tittle">法律主提案</div>
-            <div class="legislature__number personalbillnumber">載入中</div>
+            <div class="legislature__number personalbillnumber">...</div>
           </a>
           <a class="legislature__bullet" href="##">
             <div class="legislature__sub-tittle">法律共同提案</div>
-            <div class="legislature__number coworkbillnumber">載入中</div>
+            <div class="legislature__number coworkbillnumber">...</div>
           </a>
           <a class="legislature__bullet" href="##">
             <div class="legislature__sub-tittle">書面質詢</div>
-            <div class="legislature__number writtenInterpellationnumber">載入中</div>
+            <div class="legislature__number writtenInterpellationnumber">...</div>
           </a>
-          <a class="legislature__bullet" href="##">
+          <a class="legislature__bullet oralinterpellationcontinue" href="##">
             <div class="legislature__sub-tittle oralinterpellationnumber">口頭質詢</div>
-            <div class="legislature__number oralinterpellationnumber">載入中</div>
+            <div class="legislature__number oralinterpellationnumber">...</div>
           </a>
           <a class="legislature__bullet" href="##">
             <div class="legislature__sub-tittle">其他國會發言</div>
@@ -196,16 +196,17 @@
               </p>
             </article>
           </div>
-          <div class="legislature__oral_interpellation">
+          <div class="legislature__oral_interpellation oral-All">
             <div class="legislature__filter">
               <div class="dropdown">
                 <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <div class="legislature__container">主辦單位</div>
+                  <div class="legislature__container oral-title">主辦單位</div>
                   <div class="legislature__container dropdown-toggle"></div>
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">主辦單位</a></li>
                   <li><a class="dropdown-item" href="#">院會</a></li>
                   <li>
                     <a class="dropdown-item" href="#">財政委員會</a>
@@ -233,12 +234,20 @@
               </div>
             </div>
             <article class="legislature__article">
-              <div class="legislature__box">
-                <iframe width="428" height="226" src="https://www.youtube.com/embed/vJqlgkk7brY"
+              <a href="https://www.youtube.com/watch?v=vJqlgkk7brY" class="legislature__box">
+                <div class="legislature__box-background" data-src="https://www.youtube.com/embed/vJqlgkk7brY" style="background-image: url(https://i.ytimg.com/vi/vJqlgkk7brY/hqdefault.jpg);">
+                  <svg height="48" width="68" version="1.1" viewBox="0 0 68 48">
+                    <path
+                      d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                      fill="#fe0001"></path>
+                    <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                  </svg>
+                </div>
+                <!-- <iframe width="428" height="226" src="https://www.youtube.com/embed/vJqlgkk7brY"
                   title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
+                  allowfullscreen=""></iframe> -->
+                </a>
               <div class="legislature__box">
                 <h4>mRNA疫苗供懷孕第一線醫事人員施打</h4>
                 <h6>質詢時間：2021/6/11</h6>

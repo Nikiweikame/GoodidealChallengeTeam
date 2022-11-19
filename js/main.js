@@ -57,6 +57,60 @@ const legislatureSocialWelfare = document.querySelector(
 );
 legislatureSocialWelfare.addEventListener("click", bodyDefault, false);
 
+// legic title 切換
+
+let legislatureitems = document.querySelectorAll("a.legislature__bullet");
+let buttonActivity = new ButtonActivity();
+
+for (let i of legislatureitems) {
+  i.addEventListener("click", buttonActivity.click, false);
+}
+
+function ButtonActivity() {
+  this.click = function () {
+    function disappearActivty() {
+      for (let i of AA) {
+        i.classList.remove("legislature__actived");
+      }
+    }
+    const AA = document.querySelectorAll("a.legislature__bullet");
+    disappearActivty();
+    this.classList.add("legislature__actived");
+  };
+}
+
+// legislature-button-mainpage
+
+const legislatureMainPage = document.querySelector(
+  "section.legislature__aside"
+);
+legislatureitems[0].addEventListener(
+  "click",
+  () =>
+    (legislatureMainPage.className = "legislature__aside personal_bill-appear")
+);
+legislatureitems[1].addEventListener(
+  "click",
+  () =>
+    (legislatureMainPage.className = "legislature__aside cowork_bill-appear")
+);
+legislatureitems[2].addEventListener(
+  "click",
+  () =>
+    (legislatureMainPage.className =
+      "legislature__aside written_interpellation-appear")
+);
+legislatureitems[3].addEventListener(
+  "click",
+  () =>
+    (legislatureMainPage.className =
+      "legislature__aside oral_interpellation-appear")
+);
+legislatureitems[4].addEventListener(
+  "click",
+  () => (legislatureMainPage.className = "legislature__aside others-appear")
+);
+
 // 資料匯入-Legislature
 // Legislature personal_bill
 
@@ -94,7 +148,9 @@ async function writeLegislaturePersonalBill() {
   const mainLegislaturePersonalBillElment = document.querySelector(
     ".legislature__number.personalbillnumber"
   );
-  const modifyMain = document.querySelector(".legislature__container.personalbillnumber");
+  const modifyMain = document.querySelector(
+    ".legislature__container.personalbillnumber"
+  );
   modifyMain.innerText = `法律主提案(${number})`;
   const modify = document.querySelector(".dropdown-item.personalbillnumber");
   modify.innerText = `法律主提案(${number})`;
@@ -119,7 +175,7 @@ document.addEventListener(
   false
 );
 
-// Legislature cowork_bill 
+// Legislature cowork_bill
 
 async function writeCoworkBill() {
   async function GetCoworkBillJSON() {
@@ -272,7 +328,9 @@ async function writeWrittenInterpellation() {
   const mainCoworkbillJSONElement = document.querySelector(
     ".legislature__number.writtenInterpellationnumber"
   );
-  const modify = document.querySelector(".dropdown-item.writtenInterpellationnumber");
+  const modify = document.querySelector(
+    ".dropdown-item.writtenInterpellationnumber"
+  );
   modify.innerText = `書面質詢(${number})`;
   animateIt(headerCoworkbillJSONElement, number);
   animateIt(mainCoworkbillJSONElement, number);
@@ -291,7 +349,11 @@ async function writeWrittenInterpellation() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", writeWrittenInterpellation, false);
+document.addEventListener(
+  "DOMContentLoaded",
+  writeWrittenInterpellation,
+  false
+);
 
 // Legislature oral_interpellation
 // oralInterpellation
@@ -361,21 +423,78 @@ async function writeOralInterpellation() {
   const mainOralInterpellationJSONElement = document.querySelector(
     ".legislature__number.oralinterpellationnumber"
   );
-  const modify = document.querySelector(".dropdown-item.oralinterpellationnumber");
-  modify.innerText = `法律共同提案(${number})`;
+  const modify = document.querySelector(
+    ".dropdown-item.oralinterpellationnumber"
+  );
+  modify.innerText = `口頭質詢(${number})`;
   animateIt(headerOralInterpellationJSONElement, number);
   animateIt(mainOralInterpellationJSONElement, number);
-  for (let i of oralInterpellationJSON) {
-    const text = `<article class="legislature__article">
-    <div class="legislature__box">
-      <iframe width="428" height="226" src="https://www.youtube.com/embed/${i.fields[
-        "YT連結/資料連結"
-      ].slice(
-        32,
-        43
-      )}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-    </div>
-    <div class="legislature__box">
+  // console.log(1);
+  legislature.addEventListener("click", function () {
+    legislature.removeEventListener("click", arguments.callee);
+    let oralPlace = {
+      院會: "A",
+      財政委員會: "B",
+      內政委員會: "C",
+      交通委員會: "D",
+      經濟委員會: "E",
+      外交及國防委員會: "F",
+      司法及法制委員會: "G",
+      教育及文化委員會: "H",
+      社會福利及衛生環境委員會: "I",
+    };
+    // console.log(2);
+    for (let i of oralInterpellationJSON) {
+      i.fields["YT連結/資料連結"] = i.fields["YT連結/資料連結"] || "";
+      // console.log("i", oralInterpellationJSON.indexOf(i));
+      let tempString = i.fields["主辦單位"];
+      // console.log(
+      //   oralPlace[tempString],
+      //   oralPlace[i.fields["主辦單位"]],
+      //   "oral-" + oralPlace[i.fields["主辦單位"]],
+      //   i.fields["主辦單位"],
+      //   i
+      // );
+      let text;
+      if (i.fields["YT連結/資料連結"].includes("youtube")) {
+        text = `<article class="legislature__article oral-${
+          oralPlace[i.fields["主辦單位"]]
+        }">
+    <a href="https://www.youtube.com/watch?v=${i.fields[
+      "YT連結/資料連結"
+    ].slice(32, 43)}" class="legislature__box">
+    <div class="legislature__box-background" data-src="https://www.youtube.com/embed/${i.fields[
+      "YT連結/資料連結"
+    ].slice(
+      32,
+      43
+    )}" style="background-image: url(https://i.ytimg.com/vi/${i.fields[
+          "YT連結/資料連結"
+        ].slice(32, 43)}/hqdefault.jpg);">
+    <svg height="48" width="68" version="1.1" viewBox="0 0 68 48">
+      <path
+        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+        fill="#fe0001"></path>
+      <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+    </svg>
+  </div>
+</a>`;
+      } else if (i.fields["YT連結/資料連結"].length === 0) {
+        text = `<article class="legislature__article oral-${
+          oralPlace[i.fields["主辦單位"]]
+        }">
+        <div class="legislature__box legislature__no-link">
+          <p>3Q問政中</p>
+        </div>`;
+      } else {
+        text = `<article class="legislature__article oral-${
+          oralPlace[i.fields["主辦單位"]]
+        }">
+        <div class="legislature__box legislature__vedio-link">
+          <a href="${i.fields["YT連結/資料連結"]}">3Q問政連結</a>
+        </div> `;
+      }
+      text += `<div class="legislature__box">
       <h4>${i.fields["title"]}</h4>
       <h6>質詢時間：${i.fields["質詢時間"]}</h6>
       <h5>主辦單位：${i.fields["主辦單位"]}</h5>
@@ -384,13 +503,64 @@ async function writeOralInterpellation() {
       </p>
     </div>
   </article>`;
-    let target = document.querySelector(".legislature__oral_interpellation");
+      // console.log(3, text);
+      let target = document.querySelector(".legislature__oral_interpellation");
 
-    target.innerHTML += text;
-  }
+      target.innerHTML += text;
+    }
+    let title = document.querySelector(".legislature__container.oral-title");
+    let titleList = document.querySelectorAll(".oral-All .dropdown-item");
+    let titleContainer = document.querySelector(
+      ".legislature__oral_interpellation.oral-All"
+    );
+    let oralPPlace = {
+      主辦單位: "",
+      院會: "-A",
+      財政委員會: "-B",
+      內政委員會: "-C",
+      交通委員會: "-D",
+      經濟委員會: "-E",
+      外交及國防委員會: "-F",
+      司法及法制委員會: "-G",
+      教育及文化委員會: "-H",
+      社會福利及衛生環境委員會: "-I",
+    };
+    let oralArray = [
+      "主辦單位",
+      "院會",
+      "財政委員會",
+      "內政委員會",
+      "交通委員會",
+      "經濟委員會",
+      "外交及國防委員會",
+      "司法及法制委員會",
+      "教育及文化委員會",
+      "社會福利及衛生環境委員會",
+    ];
+    for (let i = 0; i < titleList.length; i++) {
+      // console.log(titleList[i],title.textContent)
+      titleList[i].addEventListener("click", function () {
+        let tempclassname = "oral-All" + oralPPlace[oralArray[i]];
+        titleContainer.classList.remove("oral-All");
+        titleContainer.classList.remove("oral-All-A");
+        titleContainer.classList.remove("oral-All-B");
+        titleContainer.classList.remove("oral-All-C");
+        titleContainer.classList.remove("oral-All-D");
+        titleContainer.classList.remove("oral-All-E");
+        titleContainer.classList.remove("oral-All-F");
+        titleContainer.classList.remove("oral-All-G");
+        titleContainer.classList.remove("oral-All-H");
+        titleContainer.classList.remove("oral-All-I");
+        titleContainer.classList.add(tempclassname);
+        title.textContent = oralArray[i];
+      });
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", writeOralInterpellation, false);
+
+// oral-list
 
 // LegislatureOthers
 // othersnumber
@@ -452,7 +622,7 @@ async function writeLegislatureOthers() {
   }
   const LegislatureOthersJSON = await GetLegislatureOthersJSON();
   const number = LegislatureOthersJSON.length;
-  console.log(number)
+  // console.log(number);
   const headerLegislatureOthersJSONElement = document.querySelector(
     ".header__number.othersnumber"
   );
@@ -463,16 +633,30 @@ async function writeLegislatureOthers() {
   modify.innerText = `其他國會發言(${number})`;
   animateIt(headerLegislatureOthersJSONElement, number);
   animateIt(mainLegislatureOthersJSONElement, number);
-  for (let i of LegislatureOthersJSON) {
-    i.fields["事由"] = i.fields["事由"] ||  ""
-    const text = `<article class="legislature__article">
-    <div class="legislature__box">
-      <iframe width="428" height="226" src="https://www.youtube.com/embed/${i.fields[
+  legislature.addEventListener("click", function loadingPage() {
+    for (let i of LegislatureOthersJSON) {
+      i.fields["事由"] = i.fields["事由"] || "";
+      const text = `<article class="legislature__article">
+    <a href="https://www.youtube.com/watch?v=${i.fields["YT連結"].slice(
+      32,
+      43
+    )}" class="legislature__box">
+    <div class="legislature__box-background" data-src="https://www.youtube.com/embed/${i.fields[
+      "YT連結"
+    ].slice(
+      32,
+      43
+    )}" style="background-image: url(https://i.ytimg.com/vi/${i.fields[
         "YT連結"
-      ].slice(
-        32,
-        43
-      )}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      ].slice(32, 43)}/hqdefault.jpg);">
+    <svg height="48" width="68" version="1.1" viewBox="0 0 68 48">
+      <path
+        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+        fill="#fe0001"></path>
+      <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+    </svg>
+  </div>
+</a>
     </div>
     <div class="legislature__box">
       <h4>事由：${i.fields["事由"]}</h4>
@@ -481,15 +665,62 @@ async function writeLegislatureOthers() {
       <p>${i.fields["3Q問政"]}</p>
     </div>
   </article>`;
-    let target = document.querySelector(".legislature__others");
+      let target = document.querySelector(".legislature__others");
 
-    target.innerHTML += text;
-  }
+      target.innerHTML += text;
+    }
+    legislature.removeEventListener("click", arguments.callee);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", writeLegislatureOthers, false);
 
-// legislature-button
+// legislature-button-modify
+
+function legislatureButtonModify() {
+  const modifyMain = document.querySelector(
+    ".legislature__container.personalbillnumber"
+  );
+  const personalbillnumber = document.querySelector(
+    ".dropdown-item.personalbillnumber"
+  );
+  const coworkbillnumber = document.querySelector(
+    ".dropdown-item.coworkbillnumber"
+  );
+  const writtenInterpellationnumber = document.querySelector(
+    ".dropdown-item.writtenInterpellationnumber"
+  );
+  const oralinterpellationnumber = document.querySelector(
+    ".dropdown-item.oralinterpellationnumber"
+  );
+  const othersnumber = document.querySelector(".dropdown-item.othersnumber");
+  // const legislatureMainPage = document.querySelector(
+  //   "section.legislature__aside"
+  // );
+  personalbillnumber.addEventListener("click", () => {
+    legislatureMainPage.className = "legislature__aside personal_bill-appear";
+    modifyMain.innerText = personalbillnumber.innerText;
+  });
+  coworkbillnumber.addEventListener("click", () => {
+    legislatureMainPage.className = "legislature__aside cowork_bill-appear";
+    modifyMain.innerText = coworkbillnumber.innerText;
+  });
+  writtenInterpellationnumber.addEventListener("click", () => {
+    legislatureMainPage.className =
+      "legislature__aside written_interpellation-appear";
+    modifyMain.innerText = writtenInterpellationnumber.innerText;
+  });
+  oralinterpellationnumber.addEventListener("click", () => {
+    legislatureMainPage.className =
+      "legislature__aside oral_interpellation-appear";
+    modifyMain.innerText = oralinterpellationnumber.innerText;
+  });
+  othersnumber.addEventListener("click", () => {
+    legislatureMainPage.className = "legislature__aside others-appear";
+    modifyMain.innerText = othersnumber.innerText;
+  });
+}
+document.addEventListener("DOMContentLoaded", legislatureButtonModify, false);
 
 // 資料匯入-social-welfare
 
@@ -575,58 +806,6 @@ function changeActivity() {
   disappearActivty();
   this.classList.add("legislature__actived");
 }
-
-let legislatureitems = document.querySelectorAll("a.legislature__bullet");
-let buttonActivity = new ButtonActivity();
-
-for (let i of legislatureitems) {
-  i.addEventListener("click", buttonActivity.click, false);
-}
-
-function ButtonActivity() {
-  this.click = function () {
-    function disappearActivty() {
-      for (let i of AA) {
-        i.classList.remove("legislature__actived");
-      }
-    }
-    const AA = document.querySelectorAll("a.legislature__bullet");
-    disappearActivty();
-    this.classList.add("legislature__actived");
-  };
-}
-
-// legislature-button-mainpage
-
-const legislatureMainPage = document.querySelector(
-  "section.legislature__aside"
-);
-legislatureitems[0].addEventListener(
-  "click",
-  () =>
-    (legislatureMainPage.className = "legislature__aside personal_bill-appear")
-);
-legislatureitems[1].addEventListener(
-  "click",
-  () =>
-    (legislatureMainPage.className = "legislature__aside cowork_bill-appear")
-);
-legislatureitems[2].addEventListener(
-  "click",
-  () =>
-    (legislatureMainPage.className =
-      "legislature__aside written_interpellation-appear")
-);
-legislatureitems[3].addEventListener(
-  "click",
-  () =>
-    (legislatureMainPage.className =
-      "legislature__aside oral_interpellation-appear")
-);
-legislatureitems[4].addEventListener(
-  "click",
-  () => (legislatureMainPage.className = "legislature__aside others-appear")
-);
 
 // personal_bill
 // cowork_bill

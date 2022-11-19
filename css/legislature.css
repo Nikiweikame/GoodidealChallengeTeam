@@ -2,9 +2,9 @@
   outline: 1px green solid;
 }
 
-body {
-  /* background-color: #a63f24; */
-}
+/* body {
+  background-color: #a63f24;
+} */
 
 .legislature__tittle {
   padding: 17px 36px 17px 30px;
@@ -191,4 +191,129 @@ h6 {
     width: 30px;
     height: 30px;
   }
+}
+
+.legislature__continueBTN {
+  padding: 17px 36px 17px 30px;
+  color: #ffffff;
+  text-align-last: center;
+  background: #a63f24;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.oral-All .oral-A,
+.oral-All .oral-B,
+.oral-All .oral-C,
+.oral-All .oral-D,
+.oral-All .oral-E,
+.oral-All .oral-F,
+.oral-All .oral-G,
+.oral-All .oral-H,
+.oral-All .oral-I {
+  display: block;
+}
+
+.oral-All-A .oral-A {
+  display: block;
+}
+.oral-All-B .oral-B {
+  display: block;
+}
+.oral-All-C .oral-C {
+  display: block;
+}
+.oral-All-D .oral-D {
+  display: block;
+}
+.oral-All-E .oral-E {
+  display: block;
+}
+.oral-All-F .oral-F {
+  display: block;
+}
+.oral-All-G .oral-G {
+  display: block;
+}
+.oral-All-H .oral-H {
+  display: block;
+}
+.oral-All-I .oral-I {
+  display: block;
+}
+
+.oral-A {
+  display: none;
+}
+/* .legislature__article.oral-B, */
+.oral-B {
+  display: none;
+}
+.oral-C {
+  display: none;
+}
+.oral-D {
+  display: none;
+}
+.oral-E {
+  display: none;
+}
+.oral-F {
+  display: none;
+}
+.oral-G {
+  display: none;
+}
+
+.oral-H {
+  display: none;
+}
+.oral-I {
+  display: none;
+}
+
+.legislature__box-background {
+  height: 226px;
+  width: 428px;
+  position: relative;
+  background-position-y: -56px;
+  background-size: cover;
+}
+
+.legislature__box-background svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.legislature__no-link{
+  height: 226px;
+  width: 428px;
+  background-color: #a63f24;
+}
+
+.legislature__no-link p {
+  font-size: 60px;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 60px 30px;
+}
+
+.legislature__vedio-link{
+  height: 226px;
+  width: 428px;
+  background-color: #a63f24;
+}
+
+.legislature__vedio-link a {
+  height: 100%;
+  display: block;
+  font-size: 60px;
+  padding: 60px 30px;
+  color: #fff;
+  text-align: center;
 }
