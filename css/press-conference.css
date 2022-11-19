@@ -1,0 +1,74 @@
+* {
+    outline: rgb(33, 183, 183)  0.5px solid;
+}
+
+.press__container {
+    background-color:#A63F24 ;
+    width: 100%;
+}
+
+.press__album-pc, .press__album-sp {
+    background-color: #ffffff;
+}
+
+
+
+/* for mobile phone */
+.press__album-pc {
+        display: none;
+    }
+
+
+/* for PC */
+@media screen and (min-width: 992px) {
+    .press__album-sp {
+        display: none;
+    }
+    .press__album-pc {
+        display: block;
+        /* width: 1350px; */
+        height: 319px;
+        padding: 54px;
+    }
+
+    .press__album-pc-photo {
+        display: inline-block;
+    }
+
+    .press__album-pc-photo img {
+        width: 100%;
+    }
+
+    .press__album-pc-ul {
+        padding: 0;
+    }
+    .press__album-pc-ul li {
+        display: inline-block;
+        width: 226px;
+        /* height: 147px; */
+    }
+
+    .press__album-pc-ul li div + .press__album-pc-ul li div {
+        margin-left: 20px;
+    }
+
+    .press__album-pc-container {
+        margin-left:60px;
+    }
+
+    .press__album-pc + .press__album-pc {
+        margin-top: 20px;
+    }
+
+    .press__album-pc-text {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .press__album-pc-date {
+        color:#828282;
+        margin-bottom: 5px;
+    }
+    }
+
+   
