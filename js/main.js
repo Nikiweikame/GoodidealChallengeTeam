@@ -852,3 +852,40 @@ document.addEventListener("DOMContentLoaded", calcData, false);
 
 // Airtable api 後端分頁 處理
 // 到底自動再打一次api
+
+// 留言板
+
+function updataMessageBoard() {
+  console.log(123)
+  
+  // const name = document.querySelector(".name");
+  // const phone = document.querySelector(".phone");
+  // const mailOrId = document.querySelector(".mailOrId");
+  name123 = "54684684"
+  phone = "8768768"
+  mailOrId = "46464";
+  var Airtable = require("airtable");
+  var base = new Airtable({ apiKey: "keyMauE9U1NpxdgKy" }).base(
+    "app54OxpaINAvPrfL"
+  );
+    console.log(124)
+  base("市民好聲音").create(
+    {
+      稱呼: name123,
+      手機號碼: phone,
+      "email/Line ID": mailOrId,
+    },
+    function (err, record) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(record.getId());
+    }
+  );
+  console.log(125)
+}
+
+updataMessageBoard()
+
+// 監聽送出元素，並顯示謝謝你的訊息
