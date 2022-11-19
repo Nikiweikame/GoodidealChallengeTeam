@@ -11,13 +11,81 @@
     background-color: #ffffff;
 }
 
+.photo-number {
+    position: relative;
+}
 
+/* 選取失敗（？） 待修正*/
+/* .press__album-pc-ul li + .press__album-pc-ul li {
+    margin-left: 10px;
+/* } */
 
 /* for mobile phone */
 .press__album-pc {
         display: none;
     }
 
+h2 {
+    width: 100%;
+    background: #A63F24;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 20px 16px;
+}
+
+.press__album-sp-photo {
+    display: inline-block;
+}
+
+.press__album-sp-photo img {
+    width: 100%;
+}
+
+.press__album-sp-ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    /* text-align-last: justify; */
+}
+
+.press__album-sp-ul li {
+    display: inline-block;
+    text-align: center;
+}
+
+.press__album-sp-photo {
+    display: inline-block;
+    width:160px;
+}
+
+
+.press__album-sp-text {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.press__album-sp-date {
+    color:#828282;
+    margin-bottom: 5px;
+}
+
+.press__album-sp {
+    display: block;
+    height: 316px;
+    padding: 20px;
+}
+
+.press__album-sp-photo + .press__album-sp-photo {
+    margin-left: 20px;
+}
+
+.press__album-sp + .press__album-sp {
+    margin-top: 20px;
+}
+
+.photo-hoverdark img:hover {
+    filter:brightness(70%)
+}
 
 /* for PC */
 @media screen and (min-width: 992px) {
@@ -26,7 +94,6 @@
     }
     .press__album-pc {
         display: block;
-        /* width: 1350px; */
         height: 319px;
         padding: 54px;
     }
@@ -45,7 +112,6 @@
     .press__album-pc-ul li {
         display: inline-block;
         width: 226px;
-        /* height: 147px; */
     }
 
     .press__album-pc-ul li div + .press__album-pc-ul li div {
@@ -68,6 +134,13 @@
     .press__album-pc-date {
         color:#828282;
         margin-bottom: 5px;
+    }
+    h2 {
+        width: 100%;
+        background: #A63F24;
+        font-size: 36px;
+        color: #ffffff;
+        padding: 10px 30px;
     }
     }
 
