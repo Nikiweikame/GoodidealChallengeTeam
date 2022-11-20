@@ -1,78 +1,6 @@
-.greyGridTable {
-    /* border: 0px solid #FFFFFF; */
-    /* background-color: #FFFFFF; */
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
-}
-
-.divTableCell,
-.divTableHead {
-    border: 1px solid #E0E0E0;
-    padding: 3px 4px;
-}
-
-.divTableBody .divTableCell {
-    font-size: 13px;
-}
-
-.divTableHeading {
-    background: #A63F24;
-}
-
-.divTableHeading .divTableHead {
-    font-size: 15px;
-    font-weight: bold;
-    color: #FFFFFF;
-    text-align: center;
-}
-
-.tableFootStyle {
-    font-size: 14px;
-}
-
-/* DivTable.com */
-.divTable {
-    display: table;
-}
-
-.divTableRow {
-    display: table-row;
-}
-
-.divTableHeading {
-    display: table-header-group;
-}
-
-.divTableCell,
-.divTableHead {
-    display: table-cell;
-}
-
-.divTableHeading {
-    display: table-header-group;
-}
-
-.divTableFoot {
-    display: table-footer-group;
-}
-
-.divTableBody {
-    display: table-row-group;
-}
-
-
-/* !!!original table css code!!! */
+/* header、版面設定 */
 body {
     margin: 0;
-}
-
-@media screen and (max-width: 992px) {
-
-    /* for mobile phone */
-    .social-welfare__pc {
-        display: none;
-    }
 }
 
 .social-welfare__title {
@@ -83,7 +11,7 @@ body {
     padding: 17px 30px;
     border-bottom: solid #ffffff 1px;
     box-sizing: border-box;
-    height: 80px;
+
 }
 
 .social-welfare h2 {
@@ -111,64 +39,12 @@ body {
     vertical-align: baseline;
 }
 
-.social-welfare__event th {
-    box-sizing: border-box;
-    height: 70px;
-}
 
-.social-welfare__event td {
-    box-sizing: border-box;
-}
-
-/* .menuclose {
-    display: flex;
-    background-color: #a63f24;
-    color: white;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: none;
-  } */
-
-/* 待處理 */
-/* span::before,
-  span::after {
-    content: " ";
-    display: block;
-    height: 1px;
-    width: 100%;
-    transform: rotate(-45deg);
-    top: calc(50% - 0.5px);
-    left: 0;
-    color: white;
-  } */
-
-/* span::before {
-  
-  }
-  
-  span::after {
-      
-  } */
 
 .social-welfare__menuclose span {
     font-size: 20px;
 }
 
-/* 待處理 */
-
-/* .social-welfare table {
-  } */
-
-
-.social-welfare thead {
-    width: 100%;
-    background-color: #a63f24;
-    margin: 0;
-    color: #ffffff;
-    /* font-size: 10px; */
-    text-align: left;
-    padding: 10px;
-}
 
 .social-welfare__event-container {
     height: calc(100vh - 80px);
@@ -181,21 +57,9 @@ body {
     width: 100%;
 }
 
-.social-welfare__event th {
-    padding: 8px;
-    text-align: center;
-    /* font-size: 15px; */
-}
-
-.social-welfare__event td {
-    border-bottom: 1px solid #ddd;
-    padding: 8px;
-    height: 70px;
-}
-
 @media screen and (min-width: 992px) {
 
-    /* for PC: */
+
     .social-welfare__title {
         height: 86px;
     }
@@ -206,7 +70,6 @@ body {
     }
 
     .social-welfare h2 {
-        /* width: 100%; */
         background: #a63f24;
         font-size: medium;
 
@@ -218,6 +81,93 @@ body {
         display: none;
     }
 
-    /* .social-welfare table {
-    } */
+}
+
+
+/* 表格 */
+.sw__table {
+    /* border: 0px solid #FFFFFF; */
+    /* background-color: #FFFFFF; */
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.sw__table-cell,
+.sw__table-head {
+    /* border: 1px solid #E0E0E0; */
+    padding: 15px 12px;
+}
+
+.sw__table-body .sw__table-cell {
+    font-size: 17px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.sw__table-heading {
+    background: #A63F24;
+}
+
+.sw__table-heading .sw__table-head {
+    font-size: 17px;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 10px;
+}
+
+.tableFootStyle {
+    font-size: 14px;
+}
+
+
+.sw__table {
+    display: table;
+}
+
+.sw__table-row {
+    display: table-row;
+}
+
+.sw__table-heading {
+    display: table-header-group;
+}
+
+.sw__table-cell,
+.sw__table-head {
+    display: table-cell;
+}
+
+.sw__table-heading {
+    display: table-header-group;
+}
+
+.sw__table-body {
+    display: table-row-group;
+}
+
+.sw__table-head-pc, .sw__table-cell-pc {
+    display: none;
+}
+
+.sw__table-head-sp {
+    display: block;
+}
+
+.sw__table-head-common {
+    display: table-cell;
+}
+
+.sw__table-head-pc, .sw__table-cell-pc {
+    display: none;
+}
+/* 表格電腦版 */
+
+@media screen and (min-width: 992px) {
+    .sw__table-head-sp, .sw__table-cell-sp {
+        display: none;
+    }
+    .sw__table-head-pc, .sw__table-cell-pc {
+        display: table-cell;
+    }
+
 }
