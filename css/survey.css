@@ -3,10 +3,8 @@
 } */
 
 .survey {
-  /* max-width: 1440px; */
   width: 100%;
-  /* margin: 0 auto; */
-  position: sticky;
+  position: fixed;
   height: 100%;
   background-color: #ffffff;
   font-family: "Noto Sans TC";
@@ -651,4 +649,9 @@
 
 .survey__represent--appear .survey__represent, .survey__first--appear .survey__first,.survey__second--appear .survey__second,.survey__third--appear .survey__third,.survey__all--appear .survey__all{
   display: block;
+}
+
+.survey__nav-item.surveyitems__actived{
+  background-color: #fff;
+  color: #a63f24;
 }

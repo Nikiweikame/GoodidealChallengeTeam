@@ -13,45 +13,58 @@ function animateIt(element, number) {
 }
 // 以後用datejs
 // 區塊出現
-
 const bodyElement = document.querySelector("body");
 function bodyAddLegislature() {
   bodyElement.className = "legislature--appear";
 }
 
 const legislature = document.getElementsByClassName("header__legislature")[0];
-legislature.addEventListener("click", bodyAddLegislature, false);
+function jumpBlock() {
+  legislature.addEventListener("click", bodyAddLegislature, false);
 
-//
+  // survey
 
-function bodyAddSocialWelfare() {
-  bodyElement.className = "social-welfare--appear";
+  function bodyAddSurvey() {
+    bodyElement.className = "survey--appear";
+  }
+
+  const survey = document.getElementsByClassName("header__survey")[0];
+  survey.addEventListener("click", bodyAddSurvey, false);
+
+  // SocialWelfare
+
+  function bodyAddSocialWelfare() {
+    bodyElement.className = "social-welfare--appear";
+  }
+
+  const socialWelfare = document.getElementsByClassName(
+    "header__social-welfare"
+  )[0];
+  socialWelfare.addEventListener("click", bodyAddSocialWelfare, false);
+
+  function bodyAddPetition() {
+    // const bodyElement = document.querySelector("body");
+    bodyElement.className = "petitionappear";
+  }
+
+  const petition = document.getElementsByClassName("header__petition")[0];
+  petition.addEventListener("click", bodyAddPetition, false);
 }
-
-const socialWelfare = document.getElementsByClassName(
-  "header__social-welfare"
-)[0];
-socialWelfare.addEventListener("click", bodyAddSocialWelfare, false);
-
-function bodyAddPetition() {
-  // const bodyElement = document.querySelector("body");
-  bodyElement.className = "petitionappear";
-}
-
-const petition = document.getElementsByClassName("header__petition")[0];
-petition.addEventListener("click", bodyAddPetition, false);
-
+document.addEventListener("DOMContentLoaded", jumpBlock, false);
 // 區塊消失
 
 function bodyDefault() {
   bodyElement.className = "";
 }
-
+// legislature
 const legislatureDisapearButton = document.querySelector(
   ".legislature--disapear"
 );
 legislatureDisapearButton.addEventListener("click", bodyDefault, false);
-//
+// survey
+const surveyDisapearButton = document.querySelector(".survey--disapear");
+surveyDisapearButton.addEventListener("click", bodyDefault, false);
+// Social-selfare
 const legislatureSocialWelfare = document.querySelector(
   ".Social-selfare--disapear"
 );
@@ -722,11 +735,47 @@ function legislatureButtonModify() {
 }
 document.addEventListener("DOMContentLoaded", legislatureButtonModify, false);
 
+// survey 頁面切換
+
+function surveyitemsctivity() {
+  let surveyitems = document.querySelectorAll(".survey__nav-item");
+  let buttonActivity = new ButtonActivity();
+  for (let i of surveyitems) {
+    i.addEventListener("click", buttonActivity.click, false);
+  }
+
+  function ButtonActivity() {
+    this.click = function () {
+      function disappearActivty() {
+        for (let i of AA) {
+          i.classList.remove("surveyitems__actived");
+        }
+      }
+      const AA = document.querySelectorAll(".survey__nav-item");
+      disappearActivty();
+      this.classList.add("surveyitems__actived");
+    };
+  }
+}
+
+function mainChange(){
+  let main = document.querySelector(".survey__main");
+  let surveyitems = document.querySelectorAll(".survey__nav-item");
+  surveyitems[0].addEventListener("click",function(){main.className="survey__main survey__represent--appear"},false)
+  surveyitems[1].addEventListener("click",function(){main.className="survey__main survey__first--appear"},false)
+  surveyitems[2].addEventListener("click",function(){main.className="survey__main survey__second--appear"},false)
+  surveyitems[3].addEventListener("click",function(){main.className="survey__main survey__third--appear"},false)
+  surveyitems[4].addEventListener("click",function(){main.className="survey__main survey__all--appear"},false)
+}
+
+document.addEventListener("DOMContentLoaded",surveyitemsctivity ,false)
+document.addEventListener("DOMContentLoaded",mainChange ,false)
+
+
 // 資料匯入-survey 會勘
 
-
-async function writeLegislatureOthers() {
-  async function GetLegislatureOthersJSON() {
+async function writeSurvey() {
+  async function GetSurveyJSON() {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer keyMauE9U1NpxdgKy");
     myHeaders.append("Cookie", "brw=brwGFqqqsO8NKxLWH");
@@ -780,21 +829,21 @@ async function writeLegislatureOthers() {
     await getNext();
     return output;
   }
-  const LegislatureOthersJSON = await GetLegislatureOthersJSON();
-  const number = LegislatureOthersJSON.length;
+  const SurveyJSON = await GetSurveyJSON();
+  const number = SurveyJSON.length;
   // console.log(number);
-  const headerLegislatureOthersJSONElement = document.querySelector(
+  const headerSurveyJSONElement = document.querySelector(
     ".header__number.othersnumber"
   );
-  const mainLegislatureOthersJSONElement = document.querySelector(
+  const mainSurveyJSONElement = document.querySelector(
     ".legislature__number.othersnumber"
   );
   const modify = document.querySelector(".dropdown-item.othersnumber");
   modify.innerText = `其他國會發言(${number})`;
-  animateIt(headerLegislatureOthersJSONElement, number);
-  animateIt(mainLegislatureOthersJSONElement, number);
+  animateIt(headerSurveyJSONElement, number);
+  animateIt(mainSurveyJSONElement, number);
   legislature.addEventListener("click", function loadingPage() {
-    for (let i of LegislatureOthersJSON) {
+    for (let i of SurveyJSON) {
       i.fields["事由"] = i.fields["事由"] || "";
       const text = `<article class="legislature__article">
     <a href="https://www.youtube.com/watch?v=${i.fields["YT連結"].slice(
@@ -833,7 +882,7 @@ async function writeLegislatureOthers() {
   });
 }
 
-// document.addEventListener("DOMContentLoaded", writeLegislatureOthers, false);
+// document.addEventListener("DOMContentLoaded", writeSurvey, false);
 
 // 資料匯入-social-welfare
 
@@ -969,19 +1018,19 @@ document.addEventListener("DOMContentLoaded", calcData, false);
 // 留言板
 
 function updataMessageBoard() {
-  console.log(123)
-  
+  console.log(123);
+
   // const name = document.querySelector(".name");
   // const phone = document.querySelector(".phone");
   // const mailOrId = document.querySelector(".mailOrId");
-  name123 = "54684684"
-  phone = "8768768"
+  name123 = "54684684";
+  phone = "8768768";
   mailOrId = "46464";
   var Airtable = require("airtable");
   var base = new Airtable({ apiKey: "keyMauE9U1NpxdgKy" }).base(
     "app54OxpaINAvPrfL"
   );
-    console.log(124)
+  console.log(124);
   base("市民好聲音").create(
     {
       稱呼: name123,
@@ -996,7 +1045,7 @@ function updataMessageBoard() {
       console.log(record.getId());
     }
   );
-  console.log(125)
+  console.log(125);
 }
 
 // updataMessageBoard()
