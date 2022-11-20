@@ -11,6 +11,70 @@ function animateIt(element, number) {
     }
   }, 2000 / number);
 }
+
+// 首頁數字變化
+
+
+function numchange(){
+  let A = document.querySelector(".header__number.personalbillnumber")
+  animateIt(A,19)
+  let B = document.querySelector(".header__number.coworkbillnumber")
+  animateIt(B,16)
+  let C = document.querySelector(".header__number.writtenInterpellationnumber")
+  animateIt(C,18)
+  let D = document.querySelector(".header__number.oralinterpellationnumber")
+  animateIt(D,134)
+  let E = document.querySelector(".header__number.othersnumber")
+  animateIt(E,5)
+  let F = document.querySelector(".header__number.Fnumber")
+  animateIt(F,3011)
+  let G = document.querySelector(".header__number.Gnumber")
+  animateIt(G,388)
+  let H = document.querySelector(".header__number.Hnumber")
+  animateIt(H,222)
+  let I = document.querySelector(".header__number.Inumber")
+  animateIt(I,224)
+}
+numchange()
+// function numchange() {
+//   var Airtable = require("airtable");
+//   var base = new Airtable({ apiKey: "keyMauE9U1NpxdgKy" }).base(
+//     "appoA2cEynkrD40GL"
+//   );
+//   var RC = 123
+//   base("各資料數量")
+//     .select({
+//       // Selecting the first 3 records in Grid view:
+//       maxRecords: 20,
+//       view: "Grid view",
+//     })
+//     .eachPage(
+//       function page(records, fetchNextPage) {
+//         // This function (`page`) will get called for each page of records.
+//         RC =records;
+//         records.forEach(function (record) {
+//           console.log("Retrieved", record.get("名稱"), record.get("資料數量"));
+//         });
+
+//         // To fetch the next page of records, call `fetchNextPage`.
+//         // If there are more records, `page` will get called again.
+//         // If there are no more records, `done` will get called.
+//         fetchNextPage();
+//       },
+//       function done(err) {
+//         if (err) {
+//           console.error(err);
+//           return;
+//         }
+//       }
+//     );
+//   return RC
+// }
+
+// var AAA = numchange()
+
+
+
 // 以後用datejs
 // 區塊出現
 const bodyElement = document.querySelector("body");
@@ -155,9 +219,9 @@ async function writeLegislaturePersonalBill() {
   }
   const legislatureJSON = await GetLegislaturePersonalBillJSON();
   const number = legislatureJSON.length;
-  const headerLegislaturePersonalBillElment = document.querySelector(
-    ".header__number.personalbillnumber"
-  );
+  // const headerLegislaturePersonalBillElment = document.querySelector(
+  //   ".header__number.personalbillnumber"
+  // );
   const mainLegislaturePersonalBillElment = document.querySelector(
     ".legislature__number.personalbillnumber"
   );
@@ -167,7 +231,7 @@ async function writeLegislaturePersonalBill() {
   modifyMain.innerText = `法律主提案(${number})`;
   const modify = document.querySelector(".dropdown-item.personalbillnumber");
   modify.innerText = `法律主提案(${number})`;
-  animateIt(headerLegislaturePersonalBillElment, number);
+  // animateIt(headerLegislaturePersonalBillElment, number);
   animateIt(mainLegislaturePersonalBillElment, number);
   for (let i of legislatureJSON) {
     const text = `<article class="legislature__article">
@@ -248,15 +312,15 @@ async function writeCoworkBill() {
   const coworkbillJSON = await GetCoworkBillJSON();
   const number = coworkbillJSON.length;
   // console.log(number)
-  const headerCoworkbillJSONElement = document.querySelector(
-    ".header__number.coworkbillnumber"
-  );
+  // const headerCoworkbillJSONElement = document.querySelector(
+  //   ".header__number.coworkbillnumber"
+  // );
   const mainCoworkbillJSONElement = document.querySelector(
     ".legislature__number.coworkbillnumber"
   );
   const modify = document.querySelector(".dropdown-item.coworkbillnumber");
   modify.innerText = `法律共同提案(${number})`;
-  animateIt(headerCoworkbillJSONElement, number);
+  // animateIt(headerCoworkbillJSONElement, number);
   animateIt(mainCoworkbillJSONElement, number);
   for (let i of coworkbillJSON) {
     const text = `<article class="legislature__article">
@@ -335,9 +399,9 @@ async function writeWrittenInterpellation() {
   const writtenInterpellationJSON = await GetWrittenInterpellationJSON();
   const number = writtenInterpellationJSON.length;
   // console.log(number)
-  const headerCoworkbillJSONElement = document.querySelector(
-    ".header__number.writtenInterpellationnumber"
-  );
+  // const headerCoworkbillJSONElement = document.querySelector(
+  //   ".header__number.writtenInterpellationnumber"
+  // );
   const mainCoworkbillJSONElement = document.querySelector(
     ".legislature__number.writtenInterpellationnumber"
   );
@@ -345,7 +409,7 @@ async function writeWrittenInterpellation() {
     ".dropdown-item.writtenInterpellationnumber"
   );
   modify.innerText = `書面質詢(${number})`;
-  animateIt(headerCoworkbillJSONElement, number);
+  // animateIt(headerCoworkbillJSONElement, number);
   animateIt(mainCoworkbillJSONElement, number);
   for (let i of writtenInterpellationJSON) {
     const text = `<article class="legislature__article">
@@ -430,9 +494,9 @@ async function writeOralInterpellation() {
   const oralInterpellationJSON = await GetOralInterpellationJSON();
   const number = oralInterpellationJSON.length;
   // console.log(number)
-  const headerOralInterpellationJSONElement = document.querySelector(
-    ".header__number.oralinterpellationnumber"
-  );
+  // const headerOralInterpellationJSONElement = document.querySelector(
+  //   ".header__number.oralinterpellationnumber"
+  // );
   const mainOralInterpellationJSONElement = document.querySelector(
     ".legislature__number.oralinterpellationnumber"
   );
@@ -440,7 +504,7 @@ async function writeOralInterpellation() {
     ".dropdown-item.oralinterpellationnumber"
   );
   modify.innerText = `口頭質詢(${number})`;
-  animateIt(headerOralInterpellationJSONElement, number);
+  // animateIt(headerOralInterpellationJSONElement, number);
   animateIt(mainOralInterpellationJSONElement, number);
   // console.log(1);
   legislature.addEventListener("click", function () {
@@ -636,15 +700,15 @@ async function writeLegislatureOthers() {
   const LegislatureOthersJSON = await GetLegislatureOthersJSON();
   const number = LegislatureOthersJSON.length;
   // console.log(number);
-  const headerLegislatureOthersJSONElement = document.querySelector(
-    ".header__number.othersnumber"
-  );
+  // const headerLegislatureOthersJSONElement = document.querySelector(
+  //   ".header__number.othersnumber"
+  // );
   const mainLegislatureOthersJSONElement = document.querySelector(
     ".legislature__number.othersnumber"
   );
   const modify = document.querySelector(".dropdown-item.othersnumber");
   modify.innerText = `其他國會發言(${number})`;
-  animateIt(headerLegislatureOthersJSONElement, number);
+  // animateIt(headerLegislatureOthersJSONElement, number);
   animateIt(mainLegislatureOthersJSONElement, number);
   legislature.addEventListener("click", function loadingPage() {
     for (let i of LegislatureOthersJSON) {
@@ -758,19 +822,48 @@ function surveyitemsctivity() {
   }
 }
 
-function mainChange(){
+function mainChange() {
   let main = document.querySelector(".survey__main");
   let surveyitems = document.querySelectorAll(".survey__nav-item");
-  surveyitems[0].addEventListener("click",function(){main.className="survey__main survey__represent--appear"},false)
-  surveyitems[1].addEventListener("click",function(){main.className="survey__main survey__first--appear"},false)
-  surveyitems[2].addEventListener("click",function(){main.className="survey__main survey__second--appear"},false)
-  surveyitems[3].addEventListener("click",function(){main.className="survey__main survey__third--appear"},false)
-  surveyitems[4].addEventListener("click",function(){main.className="survey__main survey__all--appear"},false)
+  surveyitems[0].addEventListener(
+    "click",
+    function () {
+      main.className = "survey__main survey__represent--appear";
+    },
+    false
+  );
+  surveyitems[1].addEventListener(
+    "click",
+    function () {
+      main.className = "survey__main survey__first--appear";
+    },
+    false
+  );
+  surveyitems[2].addEventListener(
+    "click",
+    function () {
+      main.className = "survey__main survey__second--appear";
+    },
+    false
+  );
+  surveyitems[3].addEventListener(
+    "click",
+    function () {
+      main.className = "survey__main survey__third--appear";
+    },
+    false
+  );
+  surveyitems[4].addEventListener(
+    "click",
+    function () {
+      main.className = "survey__main survey__all--appear";
+    },
+    false
+  );
 }
 
-document.addEventListener("DOMContentLoaded",surveyitemsctivity ,false)
-document.addEventListener("DOMContentLoaded",mainChange ,false)
-
+document.addEventListener("DOMContentLoaded", surveyitemsctivity, false);
+document.addEventListener("DOMContentLoaded", mainChange, false);
 
 // 資料匯入-survey 會勘
 
@@ -832,15 +925,15 @@ async function writeSurvey() {
   const SurveyJSON = await GetSurveyJSON();
   const number = SurveyJSON.length;
   // console.log(number);
-  const headerSurveyJSONElement = document.querySelector(
-    ".header__number.othersnumber"
-  );
+  // const headerSurveyJSONElement = document.querySelector(
+  //   ".header__number.othersnumber"
+  // );
   const mainSurveyJSONElement = document.querySelector(
     ".legislature__number.othersnumber"
   );
   const modify = document.querySelector(".dropdown-item.othersnumber");
   modify.innerText = `其他國會發言(${number})`;
-  animateIt(headerSurveyJSONElement, number);
+  // animateIt(headerSurveyJSONElement, number);
   animateIt(mainSurveyJSONElement, number);
   legislature.addEventListener("click", function loadingPage() {
     for (let i of SurveyJSON) {
@@ -942,10 +1035,10 @@ async function writeSocialWelfare() {
   }
   const socialWelfareJSON = await GetSocialWelfareJSON();
   const number = socialWelfareJSON.length;
-  const headerNumber = document.querySelector(
-    ".header__social-welfare .header__number"
-  );
-  animateIt(headerNumber, number);
+  // const headerNumber = document.querySelector(
+  //   ".header__social-welfare .header__number"
+  // );
+  // animateIt(headerNumber, number);
   for (let i of socialWelfareJSON) {
     const text = ` <tr><td class="social-welfare__common">${i.fields["性質"]}</td><td class="social-welfare__sp">${i.fields["活動名稱"]}<br/><br/>${i.fields["活動時間"]}</td><td class="social-welfare__pc">${i.fields["活動時間"]}</td><td class="social-welfare__pc">${i.fields["活動區域"]}</td><td class="social-welfare__pc">${i.fields["活動內容"]}</td></tr>`;
     let target = document.querySelector(".social-welfare__event tbody");

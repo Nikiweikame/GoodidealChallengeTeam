@@ -1,6 +1,29 @@
 body {
   margin: 0;
 }
+.social-welfare{
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  background-color: #ffffff;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  /* color: #ffffff; */
+  top: 0;
+  z-index: 2;
+}
+.social-welfare__container {
+  background-color: #a63f24;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.social-welfare tbody{
+  background-color: #ffffff;
+}
 
 @media screen and (max-width: 992px) {
   /* for mobile phone */
@@ -152,3 +175,7 @@ span::after {
   /* .social-welfare table {
   } */
 }
+
+
+/* js */
+
