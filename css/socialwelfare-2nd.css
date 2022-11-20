@@ -2,6 +2,28 @@
 body {
     margin: 0;
 }
+.sw__table-row:nth-child(n+2){
+    background-color: #FFFFFF;
+}
+.social-welfare{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    background-color: #ffffff;
+    font-family: "Noto Sans TC";
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    /* color: #ffffff; */
+    top: 0;
+    z-index: 2;
+  }
+  .social-welfare__container {
+    background-color: #a63f24;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
 
 .social-welfare__title {
     width: 100%;
@@ -47,7 +69,9 @@ body {
 
 
 .social-welfare__event-container {
-    height: calc(100vh - 80px);
+    height: 100vh;
+    background-color: #ffffff;
+    overflow-y: auto;
 }
 
 .social-welfare__event {
@@ -112,7 +136,6 @@ body {
     font-size: 17px;
     color: #FFFFFF;
     text-align: left;
-    padding: 10px;
 }
 
 .tableFootStyle {
@@ -125,7 +148,9 @@ body {
 }
 
 .sw__table-row {
-    display: table-row;
+    /* display: table-row;  */
+    display: flex;
+    padding: 14.5px 16px;
 }
 
 .sw__table-heading {
@@ -134,7 +159,9 @@ body {
 
 .sw__table-cell,
 .sw__table-head {
-    display: table-cell;
+    /* display: table-cell; */
+    /* padding: 0; */
+    padding: 10px;
 }
 
 .sw__table-heading {
@@ -151,10 +178,12 @@ body {
 
 .sw__table-head-sp {
     display: block;
+    flex: 1 1 auto;
 }
 
 .sw__table-head-common {
-    display: table-cell;
+    /* display: table-cell; */
+    flex: 0 1 90px
 }
 
 .sw__table-head-pc, .sw__table-cell-pc {
@@ -162,12 +191,36 @@ body {
 }
 /* 表格電腦版 */
 
+.sw__table-cell-common {
+    /* display: table-cell; */
+    display: block;
+    flex: 0 1 90px
+}
+
+
 @media screen and (min-width: 992px) {
     .sw__table-head-sp, .sw__table-cell-sp {
         display: none;
     }
-    .sw__table-head-pc, .sw__table-cell-pc {
-        display: table-cell;
+    .sw__table-head-common ,.sw__table-cell-common{
+        /* display: table-cell; */
+        display: block;
+        flex: 0 1 150px
+    }
+    .sw__table-head-pc.sw__table-head-pcA, .sw__table-cell-pc.sw__table-cell-pcA {
+        /* display: table-cell; */
+        display: block;
+    flex: 0 1 150px;
+    }    
+    .sw__table-head-pc.sw__table-head-pcB, .sw__table-cell-pc.sw__table-cell-pcB{
+        /* display: table-cell; */
+        display: block;
+    flex: 0 1 100px;
+    }    
+    .sw__table-head-pc.sw__table-head-pcC, .sw__table-cell-pc.sw__table-cell-pcC {
+        /* display: table-cell; */
+        display: block;
+    flex: 1 1 386px;
     }
 
 }

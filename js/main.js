@@ -14,28 +14,27 @@ function animateIt(element, number) {
 
 // 首頁數字變化
 
-
-function numchange(){
-  let A = document.querySelector(".header__number.personalbillnumber")
-  animateIt(A,19)
-  let B = document.querySelector(".header__number.coworkbillnumber")
-  animateIt(B,16)
-  let C = document.querySelector(".header__number.writtenInterpellationnumber")
-  animateIt(C,18)
-  let D = document.querySelector(".header__number.oralinterpellationnumber")
-  animateIt(D,134)
-  let E = document.querySelector(".header__number.othersnumber")
-  animateIt(E,5)
-  let F = document.querySelector(".header__number.Fnumber")
-  animateIt(F,3011)
-  let G = document.querySelector(".header__number.Gnumber")
-  animateIt(G,388)
-  let H = document.querySelector(".header__number.Hnumber")
-  animateIt(H,222)
-  let I = document.querySelector(".header__number.Inumber")
-  animateIt(I,224)
+function numchange() {
+  let A = document.querySelector(".header__number.personalbillnumber");
+  animateIt(A, 19);
+  let B = document.querySelector(".header__number.coworkbillnumber");
+  animateIt(B, 16);
+  let C = document.querySelector(".header__number.writtenInterpellationnumber");
+  animateIt(C, 18);
+  let D = document.querySelector(".header__number.oralinterpellationnumber");
+  animateIt(D, 134);
+  let E = document.querySelector(".header__number.othersnumber");
+  animateIt(E, 5);
+  let F = document.querySelector(".header__number.Fnumber");
+  animateIt(F, 3011);
+  let G = document.querySelector(".header__number.Gnumber");
+  animateIt(G, 388);
+  let H = document.querySelector(".header__number.Hnumber");
+  animateIt(H, 222);
+  let I = document.querySelector(".header__number.Inumber");
+  animateIt(I, 224);
 }
-numchange()
+numchange();
 // function numchange() {
 //   var Airtable = require("airtable");
 //   var base = new Airtable({ apiKey: "keyMauE9U1NpxdgKy" }).base(
@@ -72,8 +71,6 @@ numchange()
 // }
 
 // var AAA = numchange()
-
-
 
 // 以後用datejs
 // 區塊出現
@@ -1040,8 +1037,17 @@ async function writeSocialWelfare() {
   // );
   // animateIt(headerNumber, number);
   for (let i of socialWelfareJSON) {
-    const text = ` <tr><td class="social-welfare__common">${i.fields["性質"]}</td><td class="social-welfare__sp">${i.fields["活動名稱"]}<br/><br/>${i.fields["活動時間"]}</td><td class="social-welfare__pc">${i.fields["活動時間"]}</td><td class="social-welfare__pc">${i.fields["活動區域"]}</td><td class="social-welfare__pc">${i.fields["活動內容"]}</td></tr>`;
-    let target = document.querySelector(".social-welfare__event tbody");
+    i.fields["活動內容"] = i.fields["活動內容"] || "";
+    const text = /*html*/ `<div class="sw__table-row">
+    <div class="sw__table-cell sw__table-cell-common">${i.fields["性質"]}</div>
+    <div class="sw__table-cell sw__table-cell-sp">${i.fields["活動名稱"]} ${i.fields["活動時間"]}</div>
+    <div class="sw__table-cell sw__table-cell-pc sw__table-cell-pcA">${i.fields["活動時間"]}</div>
+    <div class="sw__table-cell sw__table-cell-pc sw__table-cell-pcB">${i.fields["活動區域"]}</div>
+    <div class="sw__table-cell sw__table-cell-pc sw__table-cell-pcC">${i.fields["活動內容"]}</div>
+  </div>`;
+    // ;
+    // /*html*/` <tr><td class="social-welfare__common">${i.fields["性質"]}</td><td class="social-welfare__sp">${i.fields["活動名稱"]}<br/><br/>${i.fields["活動時間"]}</td><td class="social-welfare__pc">${i.fields["活動時間"]}</td><td class="social-welfare__pc">${i.fields["活動區域"]}</td><td class="social-welfare__pc">${i.fields["活動內容"]}</td></tr>`;
+    let target = document.querySelector(".sw__table-body");
 
     target.innerHTML += text;
   }
