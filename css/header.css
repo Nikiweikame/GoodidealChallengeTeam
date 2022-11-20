@@ -75,12 +75,16 @@
 }
 
 .header__subtitletext {
-  display: block;
   width: 196px;
   height: 35px;
   font-weight: 700;
   font-size: 24px;
   line-height: 35px;
+}
+
+.header__subtittle-container img {
+  position: absolute;
+  left: 408px;
 }
 
 h1 {
@@ -107,16 +111,21 @@ h1 {
     "c c d d";
   gap: 20px;
 }
+
 .header__legislature {
+  box-sizing: border-box;
   position: relative;
   grid-area: a;
   height: 436px;
+  width: 608.6px;
+  padding: 24px 30.2px;
   background-image: url("../images/資產\ 1@2x\ 1.png");
   background-repeat: no-repeat;
   background-position: 290px 176px;
+  background-color: #f6f6f6;
 }
-.header__effect-row {
-  margin: 24px 30.2px 0px;
+.header__effect-row + .header__effect-row {
+  margin-top: 24px;
 }
 
 .header__box {
@@ -153,58 +162,84 @@ h1 {
   vertical-align: middle;
   margin-left: 14px;
 }
+
+.header__legislature-detail {
+  position: relative;
+  bottom: 30px;
+}
+.header__justify {
+  text-align-last: justify;
+}
 .header__right {
   text-align: right;
 }
+
 .header__petition {
+  box-sizing: border-box;
   position: relative;
   grid-area: b;
+  padding: 24px 30.2px;
   height: 233.9px;
   background-image: url("../images/Frame.png");
   background-repeat: no-repeat;
-  background-position: 175px 92.58px;
+  background-position: 165px 105px;
+  background-color: #f6f6f6;
 }
+
 .header__press-conference {
+  box-sizing: border-box;
   position: relative;
   grid-area: c;
   height: 230px;
   background-image: url("../images/—Pngtree—news\ media\ conference\ illustration_4591760\ 1.png");
   background-position: 0px 32.03px;
   background-repeat: no-repeat;
+  background-color: #f6f6f6;
 }
 .header__press-conference .header__effect-row {
   width: fit-content;
   margin: 24.7px auto 0px;
 }
 .header__survey {
+  box-sizing: border-box;
   position: relative;
+  padding: 24px 30.2px;
   height: 480px;
   grid-area: d;
   background-image: url("../images/資產\ 4@2x\ 1.png");
   background-repeat: no-repeat;
-  background-position: 124px 56px;
+  background-position: 110px 56px;
+  background-color: #f6f6f6;
 }
 
+.header__survey .header__effect-row:last-child {
+  margin-top: 259px;
+}
 .header__social-welfare-container {
   position: relative;
 }
 
 .header__social-welfare {
+  box-sizing: border-box;
   position: absolute;
   bottom: 0;
+  padding: 24px 30.2px;
   width: 100%;
   height: 269px;
   background-image: url("../images/ij@2x\ 1.png");
   background-repeat: no-repeat;
   background-position: 113px 25px;
+  background-color: #f6f6f6;
 }
-
+.header__social-welfare .header__effect-row:last-child {
+  margin-top: 48px;
+}
 .header__full-body-img {
-  width: 766.16px;
+  width: 710.16px;
   height: 940px;
   position: absolute;
   bottom: 269px;
-  left: -259.88px;
+  left: -220.88px;
 }
 
 .header__full-body-img img {
