@@ -44,3 +44,12 @@
   display: block;
   z-index: 1;
 }
+
+.survey {
+  display: none;
+}
+
+.survey--appear .social-welfare {
+  display: block;
+  z-index: 1;
+}

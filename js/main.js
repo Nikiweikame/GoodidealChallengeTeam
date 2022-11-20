@@ -722,6 +722,119 @@ function legislatureButtonModify() {
 }
 document.addEventListener("DOMContentLoaded", legislatureButtonModify, false);
 
+// 資料匯入-survey 會勘
+
+
+async function writeLegislatureOthers() {
+  async function GetLegislatureOthersJSON() {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer keyMauE9U1NpxdgKy");
+    myHeaders.append("Cookie", "brw=brwGFqqqsO8NKxLWH");
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+    var output;
+    var next;
+    await fetch(
+      "https://api.airtable.com/v0/appoA2cEynkrD40GL/%E5%85%B6%E4%BB%96%E5%9C%8B%E6%9C%83%E7%99%BC%E8%A8%80?view=Grid%20view",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        // console.log(result);
+        output = result.records;
+        next = result.offset;
+      });
+    // .catch((error) => console.log("error", error));
+
+    async function getNext() {
+      if (next !== undefined) {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer keyMauE9U1NpxdgKy");
+        myHeaders.append("Cookie", "brw=brwJ0SI0UUvmgWbi6");
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+        var outputNext;
+        await fetch(
+          "https://api.airtable.com/v0/appoA2cEynkrD40GL/%E5%85%B6%E4%BB%96%E5%9C%8B%E6%9C%83%E7%99%BC%E8%A8%80?view=Grid%20view&offset=" +
+            next,
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            // console.log(result);
+            outputNext = result.records;
+            next = result.offset;
+          });
+        output = output.concat(outputNext);
+        await getNext();
+      }
+    }
+    await getNext();
+    return output;
+  }
+  const LegislatureOthersJSON = await GetLegislatureOthersJSON();
+  const number = LegislatureOthersJSON.length;
+  // console.log(number);
+  const headerLegislatureOthersJSONElement = document.querySelector(
+    ".header__number.othersnumber"
+  );
+  const mainLegislatureOthersJSONElement = document.querySelector(
+    ".legislature__number.othersnumber"
+  );
+  const modify = document.querySelector(".dropdown-item.othersnumber");
+  modify.innerText = `其他國會發言(${number})`;
+  animateIt(headerLegislatureOthersJSONElement, number);
+  animateIt(mainLegislatureOthersJSONElement, number);
+  legislature.addEventListener("click", function loadingPage() {
+    for (let i of LegislatureOthersJSON) {
+      i.fields["事由"] = i.fields["事由"] || "";
+      const text = `<article class="legislature__article">
+    <a href="https://www.youtube.com/watch?v=${i.fields["YT連結"].slice(
+      32,
+      43
+    )}" class="legislature__box">
+    <div class="legislature__box-background" data-src="https://www.youtube.com/embed/${i.fields[
+      "YT連結"
+    ].slice(
+      32,
+      43
+    )}" style="background-image: url(https://i.ytimg.com/vi/${i.fields[
+        "YT連結"
+      ].slice(32, 43)}/hqdefault.jpg);">
+    <svg height="48" width="68" version="1.1" viewBox="0 0 68 48">
+      <path
+        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+        fill="#fe0001"></path>
+      <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+    </svg>
+  </div>
+</a>
+    </div>
+    <div class="legislature__box">
+      <h4>事由：${i.fields["事由"]}</h4>
+      <h6>提案日期：${i.fields["時間"]}</h6>
+      <h5>主辦單位：${i.fields["主辦單位"]}</h5>
+      <p>${i.fields["3Q問政"]}</p>
+    </div>
+  </article>`;
+      let target = document.querySelector(".legislature__others");
+
+      target.innerHTML += text;
+    }
+    legislature.removeEventListener("click", arguments.callee);
+  });
+}
+
+// document.addEventListener("DOMContentLoaded", writeLegislatureOthers, false);
+
 // 資料匯入-social-welfare
 
 async function writeSocialWelfare() {
@@ -886,6 +999,6 @@ function updataMessageBoard() {
   console.log(125)
 }
 
-updataMessageBoard()
+// updataMessageBoard()
 
 // 監聽送出元素，並顯示謝謝你的訊息
