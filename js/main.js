@@ -2,12 +2,12 @@
 
 function animateIt(element, number) {
   // var tick = 0;
-  if (number<300){
+  if (number < 300) {
     var tick = 0;
     var A = 1;
   } else {
-    tick = number -300;
-    var A = 5
+    tick = number - 300;
+    var A = 5;
   }
   var timer = setInterval(function () {
     if (tick <= number) {
@@ -238,7 +238,7 @@ async function writeLegislaturePersonalBill() {
   modify.innerText = `法律主提案(${number})`;
   // animateIt(headerLegislaturePersonalBillElment, number);
   animateIt(mainLegislaturePersonalBillElment, number);
-  let ii = 1 ;
+  let ii = 1;
   for (let i of legislatureJSON) {
     const text = `<article class="legislature__article">
     <h4>${ii}.${i.fields["提案名稱"]}</h4>
@@ -247,7 +247,7 @@ async function writeLegislaturePersonalBill() {
     <p>${i.fields["內容關鍵字"]}</p>
   </article>`;
     let target = document.querySelectorAll(".legislature__personal_bill")[0];
-    ii++
+    ii++;
     target.innerHTML += text;
   }
 }
@@ -329,7 +329,7 @@ async function writeCoworkBill() {
   // animateIt(headerCoworkbillJSONElement, number);
   animateIt(mainCoworkbillJSONElement, number);
 
-  let ii = 1 ;
+  let ii = 1;
   for (let i of coworkbillJSON) {
     const text = `<article class="legislature__article">
     <h4>${ii}.${i.fields["提案名稱"]}</h4>
@@ -340,7 +340,7 @@ async function writeCoworkBill() {
      </p>
   </article>`;
     let target = document.querySelector(".legislature__cowork_bill");
-    ii++
+    ii++;
     target.innerHTML += text;
   }
 }
@@ -419,7 +419,7 @@ async function writeWrittenInterpellation() {
   modify.innerText = `書面質詢(${number})`;
   // animateIt(headerCoworkbillJSONElement, number);
   animateIt(mainCoworkbillJSONElement, number);
-  let ii = 1 ;
+  let ii = 1;
   for (let i of writtenInterpellationJSON) {
     const text = `<article class="legislature__article">
     <h4>${ii}.${i.fields["摘要"]}</h4>
@@ -548,13 +548,13 @@ async function writeOralInterpellation() {
         }">
     <a href="https://www.youtube.com/watch?v=${i.fields[
       "YT連結/資料連結"
-    ].slice(32, 43)}" class="legislature__box">
+    ].slice(32, 43)}" target="_blank" class="legislature__box">
     <div class="legislature__box-background" data-src="https://www.youtube.com/embed/${i.fields[
       "YT連結/資料連結"
     ].slice(
       32,
       43
-    )}" style="background-image: url(https://i.ytimg.com/vi/${i.fields[
+    )}"  target="_blank" style="background-image: url(https://i.ytimg.com/vi/${i.fields[
           "YT連結/資料連結"
         ].slice(32, 43)}/hqdefault.jpg);">
     <svg height="48" width="68" version="1.1" viewBox="0 0 68 48">
@@ -577,7 +577,7 @@ async function writeOralInterpellation() {
           oralPlace[i.fields["主辦單位"]]
         }">
         <div class="legislature__box legislature__vedio-link">
-          <a href="${i.fields["YT連結/資料連結"]}">3Q問政連結</a>
+          <a href="${i.fields["YT連結/資料連結"]}" target="_blank">3Q問政連結</a>
         </div> `;
       }
       text += `<div class="legislature__box">
@@ -726,7 +726,7 @@ async function writeLegislatureOthers() {
     <a href="https://www.youtube.com/watch?v=${i.fields["YT連結"].slice(
       32,
       43
-    )}" class="legislature__box">
+    )}" target="_blank"  class="legislature__box">
     <div class="legislature__box-background" data-src="https://www.youtube.com/embed/${i.fields[
       "YT連結"
     ].slice(
@@ -951,13 +951,13 @@ async function writeSurvey() {
     <a href="https://www.youtube.com/watch?v=${i.fields["YT連結"].slice(
       32,
       43
-    )}" class="legislature__box">
+    )}"  target="_blank" class="legislature__box">
     <div class="legislature__box-background" data-src="https://www.youtube.com/embed/${i.fields[
       "YT連結"
     ].slice(
       32,
       43
-    )}" style="background-image: url(https://i.ytimg.com/vi/${i.fields[
+    )}"  target="_blank" style="background-image: url(https://i.ytimg.com/vi/${i.fields[
         "YT連結"
       ].slice(32, 43)}/hqdefault.jpg);">
     <svg height="48" width="68" version="1.1" viewBox="0 0 68 48">
@@ -1120,16 +1120,16 @@ function calcData() {
     // console.log(html, Date(),DataElement.innerText);
     DataElement.innerText = `上任第 ${d} 天 ${h} 時 ${m} 分 ${s}秒`;
   }, 1000);
-  setInterval(() => {
-    var NowTime = new Date();
-    var t = NowTime.getTime() - workData.getTime();
-    var d = Math.floor(t / 1000 / 60 / 60 / 24);
-    var h = Math.floor((t / 1000 / 60 / 60) % 24);
-    var m = Math.floor((t / 1000 / 60) % 60);
-    var s = Math.floor((t / 1000) % 60);
-    // console.log(html, Date(),DataElement.innerText);
-    DataElement2.innerText = `上任第 ${d} 天 ${h} 時 ${m} 分 ${s}秒`;
-  }, 1000);
+  // setInterval(() => {
+  //   var NowTime = new Date();
+  //   var t = NowTime.getTime() - workData.getTime();
+  //   var d = Math.floor(t / 1000 / 60 / 60 / 24);
+  //   var h = Math.floor((t / 1000 / 60 / 60) % 24);
+  //   var m = Math.floor((t / 1000 / 60) % 60);
+  //   var s = Math.floor((t / 1000) % 60);
+  //   // console.log(html, Date(),DataElement.innerText);
+  //   DataElement2.innerText = `上任第 ${d} 天 ${h} 時 ${m} 分 ${s}秒`;
+  // }, 1000);
 }
 
 document.addEventListener("DOMContentLoaded", calcData, false);
@@ -1142,20 +1142,28 @@ document.addEventListener("DOMContentLoaded", calcData, false);
 function updataMessageBoard() {
   console.log(123);
 
-  // const name = document.querySelector(".name");
-  // const phone = document.querySelector(".phone");
-  // const mailOrId = document.querySelector(".mailOrId");
-  name123 = "54684684";
-  phone = "8768768";
-  mailOrId = "46464";
+  const name = document.getElementById("fname").value;
+  const phone = document.getElementById("lname").value;
+  const mailOrId = document.getElementById("emailline").value;
+  // name123 = "54684684";
+  // phone = "8768768";
+  // mailOrId = "46464";
+  if (
+    name.trim.length === 0 ||
+    phone.trim.length === 0 ||
+    mailOrId.trim.length === 0
+  ) {
+    alert("資料未填寫完畢請輸入完整資訊");
+    return;
+  }
   var Airtable = require("airtable");
   var base = new Airtable({ apiKey: "keyMauE9U1NpxdgKy" }).base(
     "app54OxpaINAvPrfL"
   );
-  console.log(124);
+  // console.log(124);
   base("市民好聲音").create(
     {
-      稱呼: name123,
+      稱呼: name,
       手機號碼: phone,
       "email/Line ID": mailOrId,
     },
@@ -1167,9 +1175,13 @@ function updataMessageBoard() {
       console.log(record.getId());
     }
   );
-  console.log(125);
+  alert("感謝你提供意見");
+  document.getElementById("fname").value = "";
+  document.getElementById("lname").value = "";
+  document.getElementById("emailline").value = "";
 }
-
+const submitbtn = document.getElementById("submit");
+submitbtn.addEventListener("click", updataMessageBoard, false);
 // updataMessageBoard()
 
 // 監聽送出元素，並顯示謝謝你的訊息

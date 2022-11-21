@@ -5,7 +5,7 @@
 /* body {
   background-color: #a63f24;
 } */
-.legislature{
+.legislature {
   width: 100%;
   position: fixed;
   height: 100%;
@@ -20,11 +20,10 @@
   position: relative;
 }
 
-
 .legislature__tittle {
   padding: 17px 36px 17px 30px;
   color: #ffffff;
-  text-align-last: justify;
+  position: relative;
   background: #a63f24;
 }
 
@@ -36,6 +35,10 @@
 }
 
 .legislature__tittle .btn-close {
+  position: absolute;
+  right: 25px;
+  transform: translateY(-50%);
+  top: 50%;
   display: inline-block;
   width: 36px;
   height: 36px;
@@ -43,6 +46,12 @@
   vertical-align: middle;
   background-size: cover;
   opacity: 1;
+}
+@media screen and (max-width: 992px) {
+  .legislature__tittle .btn-close {
+    right: 36px;
+    top: 50%;
+  }
 }
 
 .legislature__main {
@@ -115,13 +124,22 @@
   background: white;
 }
 
+.legislature__article {
+  width: 100%;
+}
+
 .legislature__article + .legislature__article {
   margin: 20px 0;
+}
+
+.legislature__article:last-child {
+  margin-bottom: 50px;
 }
 
 .legislature__article h4 {
   margin: 0;
   font-size: 17px;
+  color: #000000;
 }
 
 .legislature__article h5,
@@ -172,6 +190,16 @@ h6 {
   width: fit-content;
   vertical-align: top;
 }
+
+.legislature__box h4 {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25px;
+  color: #000000;
+}
+
+/* @media screen and (max-width: 992px) {
+} */
 
 .legislature__box + .legislature__box {
   margin-left: 16px;
@@ -292,12 +320,18 @@ h6 {
   display: none;
 }
 
+.legislature__article a {
+  width: 100%;
+}
+
 .legislature__box-background {
   height: 226px;
-  width: 428px;
+  max-width: 428px;
+  width: 100%;
   position: relative;
-  background-position-y: -56px;
+  /* background-position-y: -56px; */
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .legislature__box-background svg {
@@ -307,7 +341,7 @@ h6 {
   transform: translate(-50%, -50%);
 }
 
-.legislature__no-link{
+.legislature__no-link {
   height: 226px;
   width: 428px;
   background-color: #a63f24;
@@ -322,7 +356,7 @@ h6 {
   padding: 60px 30px;
 }
 
-.legislature__vedio-link{
+.legislature__vedio-link {
   height: 226px;
   width: 428px;
   background-color: #a63f24;

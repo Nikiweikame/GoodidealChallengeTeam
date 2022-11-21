@@ -4,6 +4,11 @@ body {
   margin: 0;
 }
 
+.btn.btn-secondary{
+  border: 1px #fff solid;
+  border-radius: 0;
+}
+
 * {
   /* outline: red solid 1px; */
 }
