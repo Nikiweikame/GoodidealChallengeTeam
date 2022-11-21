@@ -151,7 +151,7 @@
 .header__press-conference:hover,
 .header__petition:hover,
 .header__survey:hover,
-.header__social-welfare:hover {
+.header__social-welfare-hover:hover {
   color: #ffffff;
   background-color: #a63f24;
   background-image: none;
@@ -329,7 +329,7 @@
   position: relative;
 }
 
-.header__social-welfare {
+.header__social-welfare-hover {
   box-sizing: border-box;
   position: absolute;
   bottom: 0;
