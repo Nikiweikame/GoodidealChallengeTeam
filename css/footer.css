@@ -149,7 +149,7 @@ body {
 
 .footer__story-share {
   display: inline-block;
-  margin-left: 45px;
+  /* margin-left: 45px; */
 }
 
 .footer__story-joinlinks span,
@@ -175,4 +175,23 @@ i {
 
 .footer__story-share span {
   margin-right: 11px;
+}
+
+
+/* contact */
+.footer__office {
+  font-weight: bold;
+}
+
+.footer__number {
+   color:#a63f24;
+   text-decoration: underline;
+}
+
+.footer__contact + .footer__contact {
+  margin-top: 20px;
+}
+
+.footer__contact-container {
+  margin-top: 20px;
 }
