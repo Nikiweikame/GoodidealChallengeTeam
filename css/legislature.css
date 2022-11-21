@@ -147,6 +147,10 @@ h6 {
   color: #a63f24;
 }
 
+.legislature .dropdown-toggle {
+  display: inline-block;
+}
+
 .legislature__filter .btn-secondary {
   padding: 9.5px 8px;
   border: 1px #a63f24 solid;

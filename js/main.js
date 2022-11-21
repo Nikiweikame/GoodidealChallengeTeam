@@ -230,15 +230,16 @@ async function writeLegislaturePersonalBill() {
   modify.innerText = `法律主提案(${number})`;
   // animateIt(headerLegislaturePersonalBillElment, number);
   animateIt(mainLegislaturePersonalBillElment, number);
+  let ii = 1 ;
   for (let i of legislatureJSON) {
     const text = `<article class="legislature__article">
-    <h4>${i.fields["提案名稱"]}</h4>
+    <h4>${ii}.${i.fields["提案名稱"]}</h4>
     <h6>提案日期：${i.fields["提案日期"]}</h6>
     <h5>內容關鍵字：</h5>
     <p>${i.fields["內容關鍵字"]}</p>
   </article>`;
     let target = document.querySelectorAll(".legislature__personal_bill")[0];
-
+    ii++
     target.innerHTML += text;
   }
 }
@@ -319,9 +320,11 @@ async function writeCoworkBill() {
   modify.innerText = `法律共同提案(${number})`;
   // animateIt(headerCoworkbillJSONElement, number);
   animateIt(mainCoworkbillJSONElement, number);
+
+  let ii = 1 ;
   for (let i of coworkbillJSON) {
     const text = `<article class="legislature__article">
-    <h4>${i.fields["提案名稱"]}</h4>
+    <h4>${ii}.${i.fields["提案名稱"]}</h4>
     <h6>提案日期：${i.fields["提案日期"]}</h6>
     <h5>內容關鍵字：</h5>
     <p>
@@ -329,7 +332,7 @@ async function writeCoworkBill() {
      </p>
   </article>`;
     let target = document.querySelector(".legislature__cowork_bill");
-
+    ii++
     target.innerHTML += text;
   }
 }
@@ -408,9 +411,10 @@ async function writeWrittenInterpellation() {
   modify.innerText = `書面質詢(${number})`;
   // animateIt(headerCoworkbillJSONElement, number);
   animateIt(mainCoworkbillJSONElement, number);
+  let ii = 1 ;
   for (let i of writtenInterpellationJSON) {
     const text = `<article class="legislature__article">
-    <h4>${i.fields["摘要"]}</h4>
+    <h4>${ii}.${i.fields["摘要"]}</h4>
     <h6>日期：${i.fields["日期"]}</h6>
     <h5>案由：</h5>
     <p>
@@ -418,7 +422,7 @@ async function writeWrittenInterpellation() {
      </p>
   </article>`;
     let target = document.querySelector(".legislature__written_interpellation");
-
+    ii++;
     target.innerHTML += text;
   }
 }
@@ -1096,6 +1100,7 @@ getDistanceSpecifiedTime(AAAA);
 
 function calcData() {
   const DataElement = document.querySelector(".header__term");
+  const DataElement2 = document.querySelector(".header__term2");
   const workData = new Date(2020, 2, 1);
   setInterval(() => {
     var NowTime = new Date();
@@ -1106,6 +1111,16 @@ function calcData() {
     var s = Math.floor((t / 1000) % 60);
     // console.log(html, Date(),DataElement.innerText);
     DataElement.innerText = `上任第 ${d} 天 ${h} 時 ${m} 分 ${s}秒`;
+  }, 1000);
+  setInterval(() => {
+    var NowTime = new Date();
+    var t = NowTime.getTime() - workData.getTime();
+    var d = Math.floor(t / 1000 / 60 / 60 / 24);
+    var h = Math.floor((t / 1000 / 60 / 60) % 24);
+    var m = Math.floor((t / 1000 / 60) % 60);
+    var s = Math.floor((t / 1000) % 60);
+    // console.log(html, Date(),DataElement.innerText);
+    DataElement2.innerText = `上任第 ${d} 天 ${h} 時 ${m} 分 ${s}秒`;
   }, 1000);
 }
 

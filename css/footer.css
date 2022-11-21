@@ -122,18 +122,22 @@ body {
 
 .footer__story {
   background-color: #ffffff;
-  padding: 48px 50px 50px 566px;
+  padding: 48px 50px 50px 566px; 
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
   /* padding-left: 450px; */
 }
 
 .footer__story-picture {
   width: 400px;
-  height: 730px;
+  /* height: 730px; */
   display: block;
   position: absolute;
-  left: 29px;
+  left: 32px;
   /* top: 18px; */
-  bottom: -130px;
+  bottom: 0px;
 }
 .footer__story-snslinks {
   display: block;
