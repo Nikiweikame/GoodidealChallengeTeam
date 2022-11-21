@@ -1,15 +1,23 @@
 // 數字變化js
 
 function animateIt(element, number) {
-  var tick = 0;
+  // var tick = 0;
+  if (number<300){
+    var tick = 0;
+    var A = 1;
+  } else {
+    tick = number -300;
+    var A = 5
+  }
   var timer = setInterval(function () {
     if (tick <= number) {
       element.innerText = tick;
-      tick++;
+      tick = tick + A;
     } else {
+      element.innerText = number;
       clearInterval(timer);
     }
-  }, 2000 / number);
+  }, 2000 / 500);
 }
 
 // 首頁數字變化

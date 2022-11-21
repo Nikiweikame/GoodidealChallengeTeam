@@ -1,0 +1,515 @@
+.header {
+  margin: 0 auto;
+  max-width: 1440px;
+  position: relative;
+  overflow-x: clip;
+}
+
+.header__logo-container {
+  position: absolute;
+  width: 357px;
+  left: -130px;
+  top: -97px;
+}
+@media screen and (min-width: 992px) {
+  .header__logo-container {
+    width: 488px;
+    left: -104px;
+    top: -155px;
+  }
+}
+
+.header__logo-container img {
+  width: 100%;
+  opacity: 15%;
+}
+
+.header__report {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  text-align: center;
+  font-size: 0px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+@media screen and (min-width: 992px) {
+  .header__report {
+    display: block;
+  }
+}
+
+.header__term {
+  display: inline-block;
+  width: 320px;
+  padding: 7px 12px;
+  height: 43px;
+  font-size: 20px;
+  background: #a63f24;
+  vertical-align: bottom;
+}
+
+.header__attendance {
+  display: inline-block;
+  margin-left: 16px;
+  padding: 7px 12px;
+  width: 190px;
+  height: 43px;
+  font-size: 20px;
+  background: #a63f24;
+  vertical-align: bottom;
+}
+
+.header__nav {
+  padding: 51px 16px 16px;
+  color: #a63f24;
+}
+
+@media screen and (min-width: 992px) {
+  .header__nav {
+    padding: 72px 140px 63px;
+    /* color: #a63f24; */
+  }
+}
+
+.header__title {
+  /* width: 572px; */
+  margin-bottom: 22px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  font-size: 0px;
+  position: relative;
+}
+.header__titletext {
+  display: block;
+  width: 198px;
+  margin: 0 auto;
+  font-weight: 900;
+  font-size: 65px;
+  line-height: 120%;
+}
+
+@media screen and (min-width: 992px) {
+  .header__titletext {
+    margin: 0;
+    width: 572px;
+    height: 130px;
+    /* font-weight: 900; */
+    font-size: 90px;
+    line-height: 130px;
+    display: inline-block;
+  }
+}
+
+.header__subtitletext {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+  /* text-align: center; */
+}
+
+@media screen and (min-width: 992px) {
+  .header__subtitletext {
+    margin: 0;
+    width: 196px;
+    height: 35px;
+  }
+}
+.header__subtittle-container img {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .header__subtittle-container img {
+    display: block;
+    position: absolute;
+    left: 264px;
+    top: 130px;
+  }
+}
+
+h1 {
+  margin: 0;
+  width: 198px;
+  height: 74px;
+  margin: 0 auto;
+  font-weight: 900;
+  font-size: 65px;
+  line-height: 94px;
+}
+
+@media screen and (min-width: 992px) {
+  h1 {
+    margin: 0;
+  }
+}
+.header__report2 {
+  position: relative;
+  height: 364px;
+  width: 100%;
+  padding: 295px 0 16px;
+}
+
+.header__report2 span {
+  position: absolute;
+  display: block;
+  letter-spacing: 0.02em;
+  padding: 6px;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 22px;
+  background: #a63f24;
+  color: #ffffff;
+  height: 34px;
+  text-align: center;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+.header__term2 {
+  margin-bottom: 8px;
+  bottom: 58px;
+}
+.header__full-body-img2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: -34px;
+}
+.header__full-body-img2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 992px) {
+  .header__report2 {
+    display: none;
+  }
+}
+
+.header__attendance2 {
+  bottom: 16px;
+}
+
+.header__legislature {
+  padding: 16px;
+  background-image: url("../images/資產\ 1@2x\ 1.png");
+  background-position: 160px bottom;
+  background-size: 298.9px 152.3px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-color: #f6f6f6;
+  margin-bottom: 16px;
+}
+
+.header__box {
+  width: 104px;
+  display: inline-block;
+}
+@media screen and (min-width: 992px) {
+  .header__box {
+    width: fit-content;
+  }
+}
+
+.header__box + .header__box {
+  margin-left: 16px;
+}
+@media screen and (min-width: 992px) {
+  .header__box + .header__box {
+    margin-left: 92px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header__legislature {
+    box-sizing: border-box;
+    position: relative;
+    grid-area: a;
+    height: 436px;
+    width: 608.6px;
+    padding: 24px 30.2px;
+    background-image: url("../images/資產\ 1@2x\ 1.png");
+    background-repeat: no-repeat;
+    background-position: 290px 176px;
+    margin-bottom: 0px;
+  }
+}
+.header__effect-row {
+  position: relative;
+}
+
+.header__effect-row + .header__effect-row {
+  margin-top: 24px;
+}
+
+.header__number {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #a63f24;
+  font-size: 50px;
+  line-height: 72px;
+  font-weight: 900;
+}
+.header__sub-tittle {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #a63f24;
+  font-weight: 900;
+  font-size: 17px;
+  line-height: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .header__number {
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 600;
+  }
+  .header__sub-tittle {
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 24px;
+    color: #a63f24;
+    font-weight: 900;
+  }
+}
+
+.header__box:last-child {
+  width: fit-content;
+}
+.header__text {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+}
+@media screen and (min-width: 992px) {
+  .header__text {
+    display: inline-block;
+    font-size: 24px;
+    color: #a63f24;
+    font-weight: 400;
+    vertical-align: middle;
+  }
+}
+.header__icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 14px;
+  height: 36px;
+  width: 36px;
+}
+.header__icon img {
+  object-fit: contain;
+  width: 100%;
+}
+@media screen and (min-width: 992px) {
+  .header__icon {
+    display: inline-block;
+    vertical-align: middle;
+    height: 54px;
+    width: 54px;
+  }
+}
+
+.header__legislature-detail {
+  position: relative;
+  bottom: 30px;
+}
+.header__justify {
+  text-align-last: justify;
+}
+.header__right {
+  text-align: right;
+}
+
+.header__effect {
+  display: block;
+  gap: 16px;
+}
+
+@media screen and (min-width: 992px) {
+  .header__effect {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+}
+
+.header__effect-business {
+  display: block;
+  /* gap: 16px; */
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 992px) {
+  .header__effect-business {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-template-areas:
+      "a a a e"
+      "b b d d"
+      "c c d d";
+    gap: 20px;
+    margin-bottom: 0;
+  }
+}
+.header__petition {
+  height: 205px;
+  background-image: url("../images/Frame.png");
+  background-repeat: no-repeat;
+  background-position: 169px 82.1px;
+  background-color: #f6f6f6;
+  background-size: 150.9px 161.8px;
+  padding: 13.3px 16px 16px;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 992px) {
+  .header__petition {
+    box-sizing: border-box;
+    position: relative;
+    grid-area: b;
+    padding: 24px 30.2px;
+    height: 233.9px;
+    margin-bottom: 0px;
+  }
+}
+
+.header__press-conference {
+  margin-bottom: 16px;
+  height: 205px;
+  box-sizing: border-box;
+  background-image: url(../images/—Pngtree—news\ media\ conference\ illustration_4591760\ 1.png);
+  background-position: -0 -0;
+  background-size: 412px 218px;
+  background-repeat: no-repeat;
+  background-color: #f6f6f6;
+  padding: 16px;
+}
+@media screen and (min-width: 992px) {
+  .header__press-conference {
+    padding: 0px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    background-image: url("../images/—Pngtree—news\ media\ conference\ illustration_4591760\ 1.png");
+    background-position: 0px 32.03px;
+    background-repeat: no-repeat;
+    background-color: #f6f6f6;
+  }
+}
+@media screen and (min-width: 992px) {
+  .header__press-conference {
+    position: relative;
+    grid-area: c;
+    height: 230px;
+  }
+}
+.header__press-conference .header__effect-row:last-child {
+  /* padding: 16px; */
+  width: fit-content;
+  margin-left: auto;
+  /* margin: 24.7px auto 0px; */
+}
+
+@media screen and (min-width: 992px) {
+  .header__press-conference .header__effect-row {
+    padding: 0px;
+    width: fit-content;
+    margin: 24.7px auto 0px;
+  }
+  .header__press-conference .header__effect-row:last-child {
+    padding: 0px;
+    width: fit-content;
+    margin: 24.7px auto 0px;
+  }
+}
+.header__survey {
+  padding: 16px;
+  background-image: url("../images/資產\ 4@2x\ 1.png");
+  background-repeat: no-repeat;
+  background-position: 171px 16px;
+  background-color: #f6f6f6;
+  background-size: 151px 279px;
+  height: 205px;
+}
+@media screen and (min-width: 992px) {
+  .header__survey {
+    box-sizing: border-box;
+    position: relative;
+    padding: 24px 30.2px;
+    height: 480px;
+    grid-area: d;
+    background-size: initial;
+  }
+  /* .header__survey .header__effect-row{
+    margin-bottom: 0px;
+  } */
+}
+
+.header__survey .header__effect-row:last-child {
+  margin-top: 53px;
+}
+@media screen and (min-width: 992px) {
+.header__survey .header__effect-row:last-child {
+  margin-top: 259px;
+  }
+}
+.header__social-welfare-container {
+  position: relative;
+}
+.header__social-welfare {
+  box-sizing: border-box;
+  /* position: absolute; */
+  bottom: 0;
+  padding: 24px 30.2px;
+  width: 100%;
+  height: 269px;
+  background-image: url("../images/ij@2x\ 1.png");
+  background-repeat: no-repeat;
+  background-position: 113px 25px;
+  background-color: #f6f6f6;
+}
+@media screen and (min-width: 992px) {
+  .header__social-welfare {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    padding: 24px 30.2px;
+    width: 100%;
+    height: 269px;
+    /* background-image: url("../images/ij@2x\ 1.png"); */
+    background-repeat: no-repeat;
+    background-position: 113px 25px;
+    background-color: #f6f6f6;
+  }
+}
+.header__social-welfare .header__effect-row:last-child {
+  margin-top: 48px;
+}
+
+.header__full-body-img {
+  display: none;
+  width: 710.16px;
+  height: 940px;
+  position: absolute;
+  bottom: 269px;
+  left: -220.88px;
+}
+
+.header__full-body-img img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 992px) {
+  .header__full-body-img {
+    display: block;
+  }
+} 
