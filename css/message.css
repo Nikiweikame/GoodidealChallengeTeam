@@ -22,14 +22,13 @@ h4 {
     width: 650px;
 }
 
-input[placeholder=稱呼],input[placeholder=手機號碼],input[placeholder=email/lineID]{
-    color: lightgray;
-}
-
-/* placeholder 的顏色 待修正 */
-/* input[placeholder]{
+/* input[placeholder=稱呼],input[placeholder=手機號碼],input[placeholder=email/lineID]{
     color: lightgray;
 } */
+
+::placeholder {
+    color: rgb(222, 221, 221);
+}
 
 input[type=text] {
     width: 100%;
@@ -72,3 +71,9 @@ input[type=text] {
     padding: 20px;
   }
  
+
+.message__container {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+  
