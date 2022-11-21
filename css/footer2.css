@@ -53,7 +53,12 @@ body {
   .footer__story-text p {
     text-align: left;
   }
-  .join, .share  {
+ 
+  .footer__number {
+    color: #8f351e;
+  }
+
+  .join, .share {
     display: none;
   }
 
