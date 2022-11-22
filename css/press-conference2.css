@@ -1,0 +1,33 @@
+h2 {
+    background-color: #A63F24;
+    color: #FFFFFF;
+    padding: 20px;
+    
+}
+.petition__background {
+    position: absolute;
+    left:50%;
+    top:50%;
+}
+.petition__background img {
+    width: 100%;
+    opacity: 15%;
+}
+
+.petition__container {
+    padding: 20%;
+}
+
+span {
+    color: #A63F24;
+    font-size: 50px;
+    /* margin: 0 auto; */
+    text-align: center;
+    display: inline-block;
+    opacity: 75%;
+}
+
+.petition__text {
+    margin: 0 auto;
+}
+
