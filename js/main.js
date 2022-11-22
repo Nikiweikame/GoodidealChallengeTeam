@@ -188,11 +188,17 @@ function jumpBlock() {
     
   function bodyAddPetition() {
     // const bodyElement = document.querySelector("body");
-    bodyElement.className = "petitionappear";
+    bodyElement.className = "petition--appear";
   }
 
   const petition = document.getElementsByClassName("header__petition")[0];
   petition.addEventListener("click", bodyAddPetition, false);
+
+  
+
+
+
+
 }
 document.addEventListener("DOMContentLoaded", jumpBlock, false);
 // 區塊消失
