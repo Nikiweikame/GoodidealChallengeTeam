@@ -486,9 +486,9 @@
 /* .header__social-welfare .header__effect-row:last-child {
   margin-top: 48px;
 } */
-.header__full-body-img {
+/* .header__full-body-img {
   display: none;
-}
+} */
 @media screen and (min-width: 992vpx) {
   .header__full-body-img {
     display: block;
