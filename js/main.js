@@ -185,7 +185,7 @@ function jumpBlock() {
     "header__social-welfare-hover"
   )[0];
   socialWelfare.addEventListener("click", bodyAddSocialWelfare, false);
-
+    
   function bodyAddPetition() {
     // const bodyElement = document.querySelector("body");
     bodyElement.className = "petitionappear";

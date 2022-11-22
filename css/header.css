@@ -261,7 +261,7 @@
 .header__press-conference:hover,
 .header__petition:hover,
 .header__survey:hover,
-.header__social-welfare-hover:hover{
+.header__social-welfare-hover:hover {
   color: #ffffff;
   background-color: #a63f24;
   background-image: none;
@@ -489,7 +489,7 @@
 .header__full-body-img {
   display: none;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992vpx) {
   .header__full-body-img {
     display: block;
     width: 710.16px;
@@ -503,4 +503,22 @@
 .header__full-body-img img {
   /* width: 100%; */
   height: 100%;
+}
+
+.header__full-body-img2 {
+  position: absolute;
+  bottom: 0;
+  /* width: 40%; */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header__full-body-img2 img {
+  width: 274.4px;
+  height: 420px;
+}
+@media screen and (min-width: 992px) {
+  .header__full-body-img2 {
+    display: none;
+  }
 }

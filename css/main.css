@@ -83,3 +83,16 @@
   background-color: #a63f24;
   height: 100%;
 }
+.press-conference--appear .petition {
+  display: block;
+  z-index: 1;
+}
+.press-conference {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #a63f24;
+  height: 100%;
+}

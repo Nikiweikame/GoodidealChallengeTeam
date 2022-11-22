@@ -1,4 +1,4 @@
-h2 {
+.press-conference h2 {
     background-color: #A63F24;
     color: #FFFFFF;
     padding: 20px;
@@ -18,7 +18,7 @@ h2 {
     padding: 20%;
 }
 
-span {
+.press-conference span {
     color: #A63F24;
     font-size: 50px;
     /* margin: 0 auto; */
