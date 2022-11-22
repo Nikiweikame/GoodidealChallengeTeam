@@ -186,23 +186,16 @@ function jumpBlock() {
   )[0];
   socialWelfare.addEventListener("click", bodyAddSocialWelfare, false);
     
-  function bodyAddPetition() {
-    // const bodyElement = document.querySelector("body");
-    bodyElement.className = "petition--appear";
-  }
+  // function bodyAddPetition() {
+  //   // const bodyElement = document.querySelector("body");
+  //   bodyElement.className = "petition--appear";
+  // }
 
-  const petition = document.getElementsByClassName("header__petition")[0];
-  petition.addEventListener("click", bodyAddPetition, false);
-
-  
-
-
-
-
+  // const petition = document.getElementsByClassName("header__petition")[0];
+  // petition.addEventListener("click", bodyAddPetition, false);
 }
 document.addEventListener("DOMContentLoaded", jumpBlock, false);
 // 區塊消失
-
 function bodyDefault() {
   bodyElement.className = "";
 }
