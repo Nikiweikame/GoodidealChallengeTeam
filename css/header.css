@@ -41,6 +41,7 @@
     position: absolute;
     top: 25px;
     right: 25px;
+    bottom: auto;
     left: auto;
     text-align: center;
     font-size: 0px;
@@ -260,7 +261,7 @@
 .header__press-conference:hover,
 .header__petition:hover,
 .header__survey:hover,
-.header__social-welfare-hover:hover {
+.header__social-welfare-hover:hover{
   color: #ffffff;
   background-color: #a63f24;
   background-image: none;

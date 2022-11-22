@@ -197,6 +197,9 @@ body {
     display: block;
     flex: 0 1 90px
 }
+.sw__table-cell-sp {
+    flex: 1 1 auto;
+}
 
 
 @media screen and (min-width: 992px) {

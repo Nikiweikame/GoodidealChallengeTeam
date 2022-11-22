@@ -1,6 +1,9 @@
 /* main {
 
 } */
+.survey a {
+  color: #000000;
+}
 
 .survey {
   width: 100%;
@@ -515,8 +518,6 @@
   line-height: 180%;
 }
 
-
-
 .survey__img-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -581,6 +582,11 @@
     z-index: 2;
   }
 }
+
+.survey--img-less .survey__img-container :last-child::before {
+  content: unset;
+}
+
 .survey__less {
   display: none;
 }
@@ -624,6 +630,10 @@
   }
 }
 
+.survey--img-less .survey__img-container :last-child .survey__less {
+  display: none;
+}
+
 .survey--img-less .survey__img-container :nth-child(n + 4) {
   display: none;
 }
@@ -639,19 +649,139 @@
   display: none;
 }
 
-
 /* js */
 
-.survey__represent, .survey__first,.survey__second,.survey__third,.survey__all{
+.survey__represent,
+.survey__first,
+.survey__second,
+.survey__third,
+.survey__all {
   display: none;
 }
 
-
-.survey__represent--appear .survey__represent, .survey__first--appear .survey__first,.survey__second--appear .survey__second,.survey__third--appear .survey__third,.survey__all--appear .survey__all{
+.survey__represent--appear .survey__represent,
+.survey__first--appear .survey__first,
+.survey__second--appear .survey__second,
+.survey__third--appear .survey__third,
+.survey__all--appear .survey__all {
   display: block;
 }
 
-.survey__nav-item.surveyitems__actived{
+.survey__nav-item.surveyitems__actived {
   background-color: #fff;
   color: #a63f24;
 }
+
+/* JS 1st */
+
+.SULA,
+.SULB,
+.SULC,
+.SULD,
+.SULE {
+  display: none;
+}
+
+.survey__represent.survey--ALL .SULA,
+.survey__represent.survey--ALL .SULB,
+.survey__represent.survey--ALL .SULC,
+.survey__represent.survey--ALL .SULD,
+.survey__represent.survey--ALL .SULE {
+  display: block;
+}
+
+.survey__represent.survey--SULA .SULA,
+.survey__represent.survey--SULB .SULB,
+.survey__represent.survey--SULC .SULC,
+.survey__represent.survey--SULD .SULD,
+.survey__represent.survey--SULE .SULE {
+  display: block;
+}
+
+.survey__first-container {
+  display: none;
+}
+
+.survey__first--All .SU1AA,
+.survey__first--All .SU1AB,
+.survey__first--All .SU1AC,
+.survey__first--All .SU1AD,
+.survey__first--AA .SU1AA,
+.survey__first--BB .SU1AB,
+.survey__first--CC .SU1AC,
+.survey__first--DD .SU1AD {
+  display: block;
+}
+
+.survey__first--C-L .SU1LA,
+.survey__first--C-L .SU1LB,
+.survey__first--C-L .SU1LC,
+.survey__first--C-L .SU1LD,
+.survey__first--C-L .SU1LE,
+.survey__first--C-A .SU1LA,
+.survey__first--C-B .SU1LB,
+.survey__first--C-C .SU1LC,
+.survey__first--C-D .SU1LD,
+.survey__first--C-E .SU1LE{
+  display: block;
+}
+
+.survey__first--AA.survey__first--C-A .survey__first-container,
+.survey__first--BB.survey__first--C-A .survey__first-container,
+.survey__first--CC.survey__first--C-A .survey__first-container,
+.survey__first--DD.survey__first--C-A .survey__first-container,
+.survey__first--AA.survey__first--C-B .survey__first-container,
+.survey__first--BB.survey__first--C-B .survey__first-container,
+.survey__first--CC.survey__first--C-B .survey__first-container,
+.survey__first--DD.survey__first--C-B .survey__first-container,
+.survey__first--AA.survey__first--C-C .survey__first-container,
+.survey__first--BB.survey__first--C-C .survey__first-container,
+.survey__first--CC.survey__first--C-C .survey__first-container,
+.survey__first--DD.survey__first--C-C .survey__first-container,
+.survey__first--AA.survey__first--C-D .survey__first-container,
+.survey__first--BB.survey__first--C-D .survey__first-container,
+.survey__first--CC.survey__first--C-D .survey__first-container,
+.survey__first--DD.survey__first--C-D .survey__first-container,
+.survey__first--AA.survey__first--C-E .survey__first-container,
+.survey__first--BB.survey__first--C-E .survey__first-container,
+.survey__first--CC.survey__first--C-E .survey__first-container,
+.survey__first--DD.survey__first--C-E .survey__first-container{
+  display: none;
+}
+
+.survey__first--AA.survey__first--C-A .SU1AA.survey__first--C-A
+.survey__first--BB.survey__first--C-A .SU1AB.survey__first--C-A
+.survey__first--CC.survey__first--C-A .SU1AC.survey__first--C-A
+.survey__first--DD.survey__first--C-A .SU1AD.survey__first--C-A
+.survey__first--AA.survey__first--C-B .SU1AA.survey__first--C-B
+.survey__first--BB.survey__first--C-B .SU1AB.survey__first--C-B
+.survey__first--CC.survey__first--C-B .SU1AC.survey__first--C-B
+.survey__first--DD.survey__first--C-B .SU1AD.survey__first--C-B
+.survey__first--AA.survey__first--C-C .SU1AA.survey__first--C-C
+.survey__first--BB.survey__first--C-C .SU1AB.survey__first--C-C
+.survey__first--CC.survey__first--C-C .SU1AC.survey__first--C-C
+.survey__first--DD.survey__first--C-C .SU1AD.survey__first--C-C
+.survey__first--AA.survey__first--C-D .SU1AA.survey__first--C-D
+.survey__first--BB.survey__first--C-D .SU1AB.survey__first--C-D
+.survey__first--CC.survey__first--C-D .SU1AC.survey__first--C-D
+.survey__first--DD.survey__first--C-D .SU1AD.survey__first--C-D
+.survey__first--AA.survey__first--C-E .SU1AA.survey__first--C-E
+.survey__first--BB.survey__first--C-E .SU1AB.survey__first--C-E
+.survey__first--CC.survey__first--C-E .SU1AC.survey__first--C-E
+.survey__first--DD.survey__first--C-E .SU1AD.survey__first--C-E{
+  display: block;
+}
+
+
+
+
+/* .survey__first--AA
+.survey__first--BB
+.survey__first--CC
+.survey__first--DD
+
+.survey__first--C-A
+.survey__first--C-B
+.survey__first--C-C
+.survey__first--C-D
+.survey__first--C-E */

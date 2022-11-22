@@ -54,3 +54,17 @@
   display: block;
   z-index: 1;
 }
+
+/* .survey__btn-main{
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 70%;
+  text-align: left;
+} */
+
+/* .survey__first-1list {
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}  */
